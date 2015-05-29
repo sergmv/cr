@@ -37,7 +37,7 @@ var app = {
         
         
         
-        //app.receivedEvent('deviceready');
+        app.receivedEvent('deviceready');
         
         function onSuccess(heading) {
             var element = document.getElementById('heading');
