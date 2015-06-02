@@ -66,20 +66,6 @@ describe('app', function() {
     });
     
     describe('lockOrient', function () {
-        it('should bind deviceready', function () {
-            runs(function () {
-                spyOn(app, 'onDeviceReady');
-                app.initialize();
-                helper.trigger(window.document, 'deviceready');
-            });
-
-            waitsFor(function () {
-                return (app.onDeviceReady.calls.length > 0);
-            }, 'onDeviceReady should be called once', 500);
-
-            runs(function () {
-                expect(app.onDeviceReady).toHaveBeenCalled();
-            });
-        });
+        alert("tets");
     });
 });
