@@ -44,7 +44,10 @@ var app = {
             alert("unlock Orientation");
             screen.unlockOrientation();
             /*  window.shouldRotateToOrientation('default');*/
+            navigator.vibrate(3000);
         });
+        
+
     }
 };
 
