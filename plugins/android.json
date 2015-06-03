@@ -37,10 +37,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.example.hello31"
         },
         "org.apache.cordova.device-orientation": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.example.hello31"
         }
     },
     "dependent_plugins": {}
