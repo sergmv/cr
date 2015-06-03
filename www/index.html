@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
     distributed with this work for additional information
@@ -21,58 +19,79 @@
 -->
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
+        
+        <script src="js/jquery-2.1.4.js"></script>
     </head>
     <body>
+        
+        <script type="text/javascript">
+            $("#lock").click(function () {
+                alert("lock orientation landscape");
+                screen.lockOrientation('landscape');
+                /*window.shouldRotateToOrientation('landscape');*/
+            });
+
+            $("#unlock").click(function () {
+                alert("unlock Orientation");
+                screen.unlockOrientation();
+                /*  window.shouldRotateToOrientation('default');*/
+            });
+
+
+
+            $("#open-links").click(function () {
+                alert("links");
+                var ref = window.open('https://www.google.ru/', '_system', 'location=no');       // loads in the system browser  
+            });
+
+
+            $("#open-links-2").click(function () {
+                alert("links");
+                var ref = window.open('https://build.phonegap.com/plugins/616', '_system', 'location=yes');       // loads in the system browser  
+            });
+
+
+        </script>
+        
+
         <div class="app">
-            <h1>PhoneGap</h1>
+            
+            <button id="lock"> lock orientation </button>
+              <br/>
+            <br/>
+            <button id="unlock"> unlock orientation </button>
+             <br/>
+            <br/>
+            <button id="open-links"> Links </button> 
+            <br/>
+            <br/>
+            <br/>
+         
+                <button id="open-links-2"> Links2</button>
+
+            <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
+            <button id="testBtn" >Test</button>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script src="../platforms/android/assets/www/cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            //app.initialize();
-        </script>
-        
-        <script>
-            var show = function() {
-                alert("Orientation type is " + screen.orientation.type);
-                alert("Orientation angle is " + screen.orientation.angle);
-            };
-
-            screen.orientation.addEventListener("change", show);
-            window.onload = show;
-        </script>
-        
-        <button onclick='screen.orientation.unlock()'>
-          Unlock
-        </button>
-        <button onclick="screen.orientation.lock('portrait')">
-          Lock to portrait
-        </button>
-        <button onclick="screen.orientation.lock('landscape')">
-            Lock to landscape
-        </button>
-        <button onclick="show()">
-            show type
-        </button>
-        <button onclick="lockOrient()">
-            lock 2
-        </button>
-        
-        <a ui-sref="https://www.facebook.com/login/"     target="_blank">
-                            <h5>
-                                <img src="imgs/assets/button-share-facebook.png" />FACEBOOK
-                            </h5>
-                        </a>
     </body>
 </html>

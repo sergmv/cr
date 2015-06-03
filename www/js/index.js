@@ -34,6 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        $("#lock").click(function () {
+            alert("lock orientation landscape");
+            screen.lockOrientation('landscape');
+            /*window.shouldRotateToOrientation('landscape');*/
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -47,3 +52,5 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+app.initialize();
