@@ -30,7 +30,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 
-  <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.11"/>
   <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
   <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 </widget>
