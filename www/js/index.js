@@ -39,6 +39,12 @@ var app = {
             screen.lockOrientation('landscape');
             /*window.shouldRotateToOrientation('landscape');*/
         });
+        
+        $("#unlock").click(function () {
+            alert("unlock Orientation");
+            screen.unlockOrientation();
+            /*  window.shouldRotateToOrientation('default');*/
+        });
     }
 };
 
