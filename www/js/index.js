@@ -33,7 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        
+        alert("onDeviceReady");
         $("#lock").click(function () {
             alert("lock orientation landscape");
             screen.lockOrientation('landscape');
