@@ -38,7 +38,31 @@ var app = {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
+        console.log(navigator.vibrate);
+        var scheme;
+
+        // Don't forget to add the cordova-plugin-device plugin for `device.platform`
+        if (device.platform === 'iOS') {
+            scheme = 'twitter://';
+        }
+        else if (device.platform === 'Android') {
+            scheme = 'com.twitter.android';
+        }
+
+        appAvailability.check(
+			scheme,       // URI Scheme or Package Name
+			function () {  // Success callback
+			    console.log(scheme + ' is available :)');
+			    alert(scheme + ' is available :)');
+			},
+			function () {  // Error callback
+			    console.log(scheme + ' is not available :(');
+			    alert(scheme + ' is not available :(');
+			}
+		);
+
+
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
