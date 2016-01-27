@@ -3,5 +3,7 @@
         
         $scope.greeting = 'Welcome!';
 
-        
+        $scope.test = function() {
+            alert("alert test");
+        };
     }]);

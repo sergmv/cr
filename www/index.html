@@ -35,8 +35,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
     </head>
-    <body>
-        <div class="app">
+    <body ng-controller="MainCtrl">
+        <div class="app" ng-show="!greeting">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
@@ -44,13 +44,13 @@
             </div>
         </div>
         <h1>{{greeting}}</h1>
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="vendor/angular.min.js"></script>
-        <script type="text/javascript" src="app/app.js"></script>
-        <script type="text/javascript" src="app/Controllers/MainCtrl.js"></script>
+        <div ng-click="test()">Button</div>
         <script type="text/javascript" src="cordova.js"></script>
 
         <script type="text/javascript" src="js/index.js"></script>
+        
+        <script type="text/javascript" src="vendor/angular.min.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="app/Controllers/MainCtrl.js"></script>
     </body>
 </html>
