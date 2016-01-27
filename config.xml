@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" version="1" />
-    <plugin name="com.ohh2ahh.plugins.appavailability" version="0.3.1" />
+    <plugin name="com.ohh2ahh.plugins.appavailability" spec="0.3.1" source="pgb" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
