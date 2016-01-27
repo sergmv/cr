@@ -44,6 +44,11 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 		
+		
+
+        console.log('Received Event: ' + id);
+    },
+	getAppAvailability: function(){
 		var scheme;
 
 		// Don't forget to add the cordova-plugin-device plugin for `device.platform`
@@ -65,7 +70,6 @@ var app = {
 				alert(scheme + ' is not available :(');
 			}
 		);
-
-        console.log('Received Event: ' + id);
-    }
+	}
+	
 };
