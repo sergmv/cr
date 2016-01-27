@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		var el = document.getElementById("btntest");
+		document.addEventListener('click', el, false);
     },
     // deviceready Event Handler
     //
