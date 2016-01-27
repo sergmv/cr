@@ -46,8 +46,9 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 		
-		
+		document.addEventListener('click', el, false);
 
+		alert('test' + ' is available :)');
         console.log('Received Event: ' + id);
     },
 	getAppAvailability: function(){
