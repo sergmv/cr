@@ -1,0 +1,270 @@
+﻿<div ng-include src="'partials/Navigation.html'"></div>
+
+<h3>Create Invitation</h3>
+
+
+<div class="row">
+    <div class="col-md-7">
+        
+            <form action="/" method="post" class="form-horizontal ng-pristine ng-valid" name="course-finder" id="create-invitation-form" novalidate="">
+                
+             <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Invitation name:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div>
+                        <input type="text" class="form-control"
+                               ng-model="invitation.name" id="invitation-name">
+                        <div ng-show="invitationNameError" class="alert alert-danger center-text" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Field Invitation name required.
+            </div>
+                    </div>
+	            </div>
+	        </div>
+
+                <div class="form-group">
+                    <label class="control-label col-lg-4 col-md-3 col-sm-3" for="SelectCourse"> My Courses:</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <select  ng-model="invitation.favoriteCourse" ng-options="course.courseName for course in courses"  class="form-control"></select>
+                    </div>
+                   
+                </div>
+                
+                 <div ng-show="selectCourseError" class="alert alert-danger center-text" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Field My Courses required.
+            </div>
+
+                <div class="form-group">
+                <label class="control-label col-lg-4 col-md-3 col-sm-3" for="dateinv">Date</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                         <!--coursedatepicker-->
+                        <input type="date" 
+                               id="Date"
+                               name="Date" 
+                               ng-model="invitation.Date" required=""/>
+                    </div>
+            </div>
+                <div ng-show="invitation.DateError" class="alert alert-danger center-text" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Field Date required.
+            </div>
+            
+                <div class="form-group">
+                    <label class="control-label col-lg-4 col-md-3 col-sm-3" for="timeinv">Time</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div style="width: 155px;">
+                            <!--  exacttimepicker-->
+                            <input type="time" class=""
+                                   id="exacttime"
+                                   name="ExactTime"
+                                   class="exactTime"
+                                   ng-model="invitation.ExactTime" required=""
+                                 
+                                />
+                        </div>
+                    </div>
+                </div>
+                
+                <div ng-show="invitation.ExactTimeError" class="alert alert-danger center-text" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Field Time required.
+                </div>
+
+                <!-- Buddies List-->
+            <div class="group-box mrgB20" ng-show="IsShowBuddiesPopup" >
+               <div class="mrgL10">
+                <div class="form-group">
+                <label class="control-label col-lg-4 col-md-3 col-sm-3 " ></label>
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-6">
+                    <h4>Buddies List</h4>
+                </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-6">
+                        <input type="checkbox" ng-model="checkAllState" ng-click="checkAllBuddies()">
+                        <label>check all</label>
+                    </div>	
+                </div>
+
+               <div class="form-group" ng-repeat="buddy in buddies" user-id="{{buddy.id}}">
+                   
+                <label class="control-label col-lg-4 col-md-3 col-sm-3 col-xs-3" for="dateinv">
+                    <img ng-src="{{SP}}/Profile/GetAvatar?username={{buddy.email}}" ngCloak alt="Alternate Text"  style="height: 30px;">
+                </label>
+              
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-3">
+                    <span> {{buddy.firstName}} {{buddy.lastName}} </span>
+                </div>	
+
+                 <div class="col-lg-4 col-md-6 col-sm-8 col-xs-3">
+                     <input type="checkbox" ng-model="buddy.isApproved">
+                 </div>	
+            </div>
+               
+                <div class="row mrgB20">
+                    <div class="col-md-3">
+                        </div>
+                        
+                        <div class="col-md-3 col-xs-6">
+                            <button class="btn btn-lg btn-default" ng-click="inviteBuddies($event)">Add to List</button>  
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <button class="btn btn-lg btn-default" ng-click="inviteBuddiesCancel($event)">Cancel</button>  
+                        </div>
+                    
+                    </div>
+            </div>
+                </div>
+                
+                
+
+                <div class="form-group">
+                <label class="control-label col-lg-4 col-md-3 col-sm-3"></label>
+                 <div class="col-lg-4 col-md-6 col-sm-8">
+                     <button  class="btn btn-lg btn-default" ng-click="inviteBuddies($event)">Invite Buddies</button>
+                     </div>
+            </div>
+
+                <div class="form-group">
+                    <label class="control-label col-lg-4 col-md-3 col-sm-3" for="SelectMembers">Invite Group Members</label>
+                    <div>
+                        <div class="col-lg-4 col-md-6 col-sm-8">
+                            <select  ng-model="selectGroup" ng-options="group.name for group in groups"  class="form-control" ng-change="changeGroup()"></select>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <!--Group Memebers List-->
+                <!-- ng-show="IsShowGroupListPopup" -->
+            <div class="group-box mrgB20" ng-show="IsShowGroupListPopup" >
+               <div class="mrgL10">
+                <div class="form-group">
+                <label class="control-label col-lg-4 col-md-3 col-sm-3 " ></label>
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-6">
+                    <h4>Group Memebers List</h4>
+                </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-6">
+                        <input type="checkbox" ng-model="checkAllMemberState" ng-click="checkAllMembersGroup()">
+                        <label>check all</label>
+                    </div>	
+                </div>
+
+                   <div class="form-group" ng-repeat="buddy in groupMembers" user-id="{{buddy.id}}">
+                  
+                       <label class="control-label col-lg-4 col-md-3 col-sm-3 col-xs-3" for="dateinv">
+                           <img ng-src="{{SP}}/Profile/GetAvatar?username={{buddy.email}}" ngCloak alt="Alternate Text"  style="height: 30px;">
+                       </label>
+              
+                       <div class="col-lg-4 col-md-6 col-sm-8 col-xs-3">
+                           <span> {{buddy.firstName}} {{buddy.lastName}} </span>
+                       </div>	
+
+                       <div class="col-lg-4 col-md-6 col-sm-8 col-xs-3">
+                           <input type="checkbox" ng-model="buddy.isApproved">
+                       </div>	
+                   </div>
+
+                   
+
+                <div class="row mrgB20">
+                    <div class="col-md-3">
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                                            <button class="btn btn-lg btn-default" ng-click="inviteGroupMembers($event)">Add To List</button>  
+                                        </div>
+
+                    
+                    </div>
+            </div>
+                </div>
+                
+                <div ng-show="invitation.ListError" class="alert alert-danger center-text" role="alert">
+                       <span class="sr-only">Error:</span>
+                       Please select Buddies OR Group Members List.
+                   </div>
+             
+                <div class="group-box mrgB20" style="border-color: orange" ng-show="invitedList.length>0">
+                <div class="mrgL10">
+                    <div class="form-group">
+                        <label class="control-label col-lg-4 col-md-3 col-sm-3 " ></label>
+                        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-6">
+                            <h4>List to Invite:</h4>
+                         
+
+                            <div class="form-group" ng-repeat="invited in invitedList track by invited.id" user-id="{{invited.id}}">
+                  
+                                <label class="control-label col-lg-4 col-md-3 col-sm-3 col-xs-4">
+                                    <img ng-src="{{SP}}/Profile/GetAvatar?username={{invited.email}}" ngCloak alt="Alternate Text"  style="height: 30px;">
+                                </label>
+              
+                                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-5">
+                                    <span> {{invited.firstName}} {{invited.lastName}} </span>
+                                </div>	
+
+                                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-3">
+                                    <input type="checkbox" ng-model="invited.isApproved">
+                                </div>	
+                            </div>
+               
+                            <div class="row mrgB20">
+                                <div class="col-md-3">
+                                </div>
+                        
+                                    <!--<div class="col-md-3 col-xs-6">
+                                            <button class="btn btn-lg btn-default" ng-click="inviteGroupMembers($event)">Apply</button>  
+                                        </div>
+
+                                    <div class="col-md-3 col-xs-6">
+                                        <button class="btn btn-lg btn-default" ng-click="inviteGroupMembersCancel($event)">Cancel</button>  
+                                    </div>
+                    -->
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                </div>
+
+
+
+            </form>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-3 col-sm-3" ></label>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <button class="btn btn-lg btn-default" ng-click="createInvitation()">Create Invitation</button>
+                <div class="mrgT10 mrgL10">
+                    <a  href ="index.html#/fillYourFoursome">Advanced Invitation</a>
+                    </div>
+            </div>
+        </div>
+
+       <div class="form-group">
+            <label class="control-label col-lg-4 col-md-3 col-sm-3" ></label>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+              
+                
+            </div>
+       </div>
+       
+        
+         
+        
+        <div class="form-group center-block">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mrgB20 center-block">
+                    <span ng-show="countInvited>1">You have sent {{countInvited}} invitations.</span>
+                    <span ng-show="countInvited==1">You have sent {{countInvited}} invitation.</span>
+                </div>
+            </div>
+      
+
+    
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-lg btn-default" href="index.html#/courseFinder">  Find a Course </a>
+    </div>
+</div>
+
+
+
+    

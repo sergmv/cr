@@ -1,0 +1,87 @@
+﻿<div ng-include src="'partials/Navigation.html'"></div>
+
+
+<div class="row col-md-12">
+    <!-- TYPES-->
+    <div class="form-group">
+        <label class="control-label col-lg-2 col-md-3 col-sm-3">Types:</label>
+        <div class="col-lg-8 col-md-2 col-sm-8">
+            <div  id="typeFG" name="typeFG">
+                <span><input type="checkbox" name="public" ng-model="searchGroup.public" class="ng-pristine ng-valid"> Public</span>
+                <span><input type="checkbox" name="private" ng-model="searchGroup.private" class="ng-pristine ng-valid"> Private</span>
+            </div>
+             <div ng-show="searchGroup.typeError" class="alert alert-danger" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Please select type
+                        </div>
+        </div>
+    </div>
+</div>
+
+<div class="row col-md-12">
+<!-- CATEGORIES-->
+<div class="form-group">
+    <label class="control-label col-lg-2 col-md-3 col-sm-3">Category:</label>
+    <div class="col-lg-8 col-md-6 col-sm-8">
+          
+        <div id="categoryFG"  name="typeFG">
+            <span ng-repeat="categoryAttr in categoryAttrs" class="mrgB10">
+                <input type="checkbox" name="category" ng-model="searchGroup[categoryAttr.name]">{{categoryAttr.textValue}}
+            </span>
+        </div>
+      <!--  {{checkedCategories}}-->
+        <div ng-show="searchGroup.categoryError" class="alert alert-danger" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Please select category
+                        </div>
+    </div>
+</div>
+    
+    </div>
+
+
+<div class="row col-md-12">
+     <div class="row mrgT10"> </div>
+     <div class="row">
+       
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">Group Name</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Type</div>
+
+    </div>
+    <div class="row col-md-12">
+    <div ng-show="foundGroups.length==0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-box">
+        <div class="center-block">0 Groups found.</div> 
+        <div class="center-block mrgT10 mrgB20"> <a class="btn btn-lg btn-default" href="#/groupfinder">  <span>Back to Search</span></a></div>
+    </div>
+    </div>
+    <div class="row mrgB20 group-box" ng-repeat="group in foundGroups" id='row_{{group.id}}' class="groupListRows">
+    
+       
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6"><a href="" ng-bind="group.name" ng-click="groupDetail($event, group.id)"> </a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 mrgT10" ng-bind="group.private ? 'Private' : 'Public'" style="text-align: left; margin-left: 6px;"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-3" >
+            <button ng-class="!group.currentUserIsInGroup ? 'btn btn-success' : 'btn btn-default'"
+                    ng-mouseover="group.hover('Leave')"
+                    ng-mouseleave=" group.hover(group.currentUserIsPending ? 'Pending' : 'Member')"
+                    ng-bind="group.currentUserIsInGroup ?(group.currentUserIsPending ? 'Pending' : 'Member') : 'Join'"
+                    ng-click="!group.currentUserIsInGroup ? joinToGroup(group.id) : group.leave()"
+                    style="width: 80px"
+                    >
+                    
+            </button>
+        
+        </div>
+
+    </div>
+
+   
+    <div><div id="map"></div>
+
+    </div>
+        <div class="detail-course">
+       <a class="big-href"ng-click="gotoDetailCourse(selectCourse.id, selectCourse.courseName)" ng-bind="selectCourse.courseName" > </a>
+        <p ng-class="{'not-visual':showSelectCourse }">(Press the link to enter course details)</p>
+        <button  class="up-scroll" ng-click="goTo('anchorTop')">Scroll to Top</button>
+     
+    </div>
+</div>

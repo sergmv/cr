@@ -1,0 +1,33 @@
+<div ng-include src="'partials/Navigation.html'"></div>
+<div class="buddies-container">
+<div class="row center-block">
+    <h4>Invite your Buddies to Join Social Putts TODAY!</h4>
+    </div>
+    <div ng-include src="'partials/SocialButtons.html'"></div>
+    <div class="row center-block">
+        <button class="btn btn-lg btn-default" ng-click="invite()"> Create Invitation</button>
+    </div>
+    <div class="item row">Buddy List (who's online)</div>
+    <div class="item row" ng-repeat="buddy in buddies" user-id="{{buddy.id}}">
+        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
+            <img ng-src="{{SP}}/Profile/GetAvatar?username={{buddy.email}}" ngCloak alt="Alternate Text" class="img-avatar">
+        </div>
+        <div class="is-online col-lg-1 col-md-1 col-sm-1 col-xs-1" ng-switch on="buddy.isOnline">
+            <div ng-switch-when="true">
+                <img src="imgs/online.png">
+            </div>
+            <div ng-switch-when="false">
+                <img src="imgs/offline.png">
+            </div>
+			
+        </div>
+		
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6">
+            <a  ng-click="gotoChat(buddy.id,buddy.firstName,buddy.lastName)" class="buddy-name">{{buddy.firstName}} {{buddy.lastName}}</a>
+        </div>
+        <div class="unread-messages-count" ng-show="buddy.incomingMessages > 0">
+            {{buddy.incomingMessages}}
+        </div>	
+
+    </div>
+</div>

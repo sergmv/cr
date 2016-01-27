@@ -1,0 +1,35 @@
+﻿<div ng-include src="'partials/Navigation.html'"></div>
+
+<h3>Log a Score</h3>
+
+<div class="row">
+    <div class="col-md-6">
+    <fieldset> 
+        <legend>
+            <div class="form-group">
+                <label for="SelectCourse">Choose a Course</label>
+                <select id="SelectCourse" class="form-control">
+                    <option>Course1</option>
+                    <option>Course2</option>
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="score">Date</label>
+                <input id="Text1" type="date"  class="form-control" placeholder="Date">
+            </div>
+            <div class="form-group">
+                <label for="score">Score</label>
+                <input id="score" type="text"  class="form-control" placeholder="Score">
+            </div>
+    
+        </legend>
+        <button type="submit" class="btn btn-success btn-lg" ng-click="saveScore()">Save Score</button>
+
+    </fieldset>
+    
+</div>
+    <div class="col-md-6">
+        <a class="btn btn-lg" href="index.html#/courseFinder">  <button class="btn btn-lg">Find a Course </button></a>
+    </div>
+</div>

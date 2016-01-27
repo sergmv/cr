@@ -1,0 +1,143 @@
+﻿<div ng-include src="'partials/Navigation.html'"></div>
+
+
+<div class="row" ng-click="searchEnd()">
+    <h3 class="col-lg-offset-3 col-md-offset-2 col-sm-offset-1 course-finder-title"style="width: 151px">Find a Group</h3>
+    <button  style="width: 126px" class="btn btn-success btn-lg" ng-click="findGroup($event)">Search</button>
+	</div>
+	<div class="course-finder-form" ng-click="searchEnd()">
+        
+	    
+	         
+         <form action="/" method="post" class="form-horizontal" name="group-finder" id="groupFormModel" novalidate>
+
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Group Name:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <input type="text" class="form-control" ng-model="searchText" ng-change="searchStart()" /> <!--ng-blur="searchEnd()" -->
+                     <div class="autocompletediv" ng-show="showcomplete">
+                    <table class="autocomplete">
+                    <tr ng-repeat="group in allGroups | orderBy:predicate:reverse | filter:searchText" ng-click="rowClick(group.id, group.name);" id='row_{{group.id}}'>
+                    <td> {{group.name}} </td>
+                    </tr>
+                    
+                    </table>
+               </div>
+	            </div>
+	        </div>
+	       
+	        <!-- City-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">City:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <input type="text" class="form-control"
+	                       id="cityFG"
+                           name="cityFG"
+	                       city-autocomplete autocomplete-val="searchGroup"
+	                       placeholder="City"
+	                       ng-model="searchGroup.city"
+	                       ng-click="cityFGClick()"
+	                       ng-keydown="pressEnter($event)"/>
+	            </div>
+	        </div>
+	        <!-- STATE-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">State:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8"> 
+	                <div>
+	                    <select id="stateFG" class="form-control"
+                                name="stateFG"
+	                            ng-model="searchGroup.state"
+	                            ng-change="stateFGChanged()"
+	                            ng-options="state.name for state in staticArrays.states">
+	                    </select>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- ZIP-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Zip:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <input type="text" class="form-control"
+	                       id="zipFG"
+                           name="zipFG"
+	                       zip-autocomplete autocomplete-val="searchGroup"
+	                       class="group-form-input"
+	                       placeholder="Zip"
+	                       ng-model="searchGroup.zip"
+	                       ng-click="zipFGClick()"
+                           ng-change="cityFGChanged()">
+	            </div>
+	        </div>
+	        <!-- COUNTRY-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Country:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <select class="form-control"
+	                        id="countryFG"
+                            name="countryFG"
+	                        ng-disabled="true"
+	                        class="group-form-input"
+	                        ng-model="searchGroup.country"
+	                        ng-options="country.name for country in staticArrays.countries"></select>
+	            </div>
+	        </div>
+	        <!-- WITHIN -->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Within:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <select class="form-control" id="withinFG" name="withinFG" ng-model="searchGroup.within">
+	                    <option value="0">None</option>
+	                    <option value="15">15 miles</option>
+	                    <option value="30">30 miles</option>
+	                    <option value="50">50 miles</option>
+	                    <option value="75">75 miles</option>
+	                </select>
+                    
+
+	                <!-- <select class="form-control"
+	                             id="withinFG"
+                            
+	                             ng-model="searchGroup.within"
+	                             ng-options="within for within in staticArrays.withinsMiles">  </select>-->
+                       
+	            </div>
+	        </div> 
+	        <!-- TYPES-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Types:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+	                <div style="margin-top: 2%" id="typeFG" name="typeFG">
+	                    <span><input type="checkbox" name="public" ng-model="searchGroup.public" class="ng-pristine ng-valid"> Public</span>
+	                    <span><input type="checkbox" name="private" ng-model="searchGroup.private" class="ng-pristine ng-valid"> Private</span>
+                        
+                        <div ng-show="searchGroup.typeError" class="alert alert-danger" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Please select type
+                        </div>
+
+	                </div>
+	            </div>
+	        </div>
+            
+	        <!-- CATEGORIES-->
+	        <div class="form-group">
+	            <label class="control-label col-lg-4 col-md-3 col-sm-3">Category:</label>
+	            <div class="col-lg-4 col-md-6 col-sm-8">
+          
+	                <div style="margin-top: 2%" id="categoryFG"  name="typeFG">
+	                    <p ng-repeat="categoryAttr in categoryAttrs" class="mrgB10 mrgR20">
+	                        <input type="checkbox" name="category" ng-model="searchGroup[categoryAttr.name]">{{categoryAttr.textValue}}
+	                    </p>
+                        <div ng-show="searchGroup.categoryError" class="alert alert-danger" role="alert">
+                          <span class="sr-only">Error:</span>
+                          Please select category
+                        </div>
+	                </div>
+	            </div>
+	        </div>
+             
+
+	    </form>
+
+	</div>

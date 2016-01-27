@@ -1,0 +1,54 @@
+﻿<div ng-include src="'partials/Navigation.html'"></div>
+
+<div class="row center-block">
+    
+
+</div>
+
+<div class="row center-block">
+    <h3>Find My Courses</h3>
+    <a class="btn btn-lg btn-default" href="index.html#/courseFinder">  <span>Search For a Course </span></a>
+</div>
+
+
+<div class="row">
+    <div class="row">
+   
+        <div class="col-md-12">
+            <h4>My Courses</h4>
+            </div>
+
+   </div>
+    
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div ng-repeat="favCourse in favCourses" class="row mrgB20 group-box">
+            <!--
+            <div class="pull-left col-lg-8 col-md-7 col-sm-7 col-xs-5">
+                {{favCourse.courseName}}
+            </div>
+            <div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-7">
+                <a href="#" class="btn  btn-default" ng-show="!favCourse.isAdded" ng-click="addToSearch($event, favCourse.id)">Add To Search</a>
+                <a href="#" class="btn  btn-default" ng-hide="!favCourse.isAdded" ng-click="removeFromSearch($event, favCourse.id)">Remove from Search</a>
+            </div>
+        
+           -->
+
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-4">
+              <a><span ng-bind="favCourse.courseName" ng-click="gotoDetailCourse(favCourse.id, favCourse.courseName)"></span></a>  
+                
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                <img ng-show="favCourse.hasBestPrice" src="imgs/best_price.png" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 pull-right">
+                <button class="btn btn-lg btn-defaul hidden-xs" ng-click="goToInvitation(favCourse.id)">Create Invite</button>
+                
+                <button class="btn btn-default hidden-lg hidden-md hidden-sm mrgT10" ng-click="goToInvitation(favCourse.id)">Create Invite</button>
+            </div>
+            
+        </div>
+        </div>
+    
+        
+</div>
+
