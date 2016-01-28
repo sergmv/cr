@@ -19,8 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function () {
-        this.runAngular();
-        //this.bindEvents();
+        //this.runAngular();
+        this.bindEvents();
     },
     // Bind Event Listeners
     //
@@ -43,8 +43,6 @@ var app = {
         //var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        var el = document.getElementsByClassName('app');
-        document.remove(el);
         //receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
