@@ -1,10 +1,10 @@
 ﻿angular.module('climeride.controllers', [])
     .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
         
-        $scope.greeting = 'Welcome!';
+        $scope.greeting = $scope.packageName;
 
         $scope.test = function() {
-            alert(device);
+            
             
             alert(device.platform);
             
@@ -12,10 +12,10 @@
 
             // Don't forget to add the cordova-plugin-device plugin for `device.platform`
             if (device.platform === 'iOS') {
-                scheme = 'twitter://';
+                scheme = $scope.packageName;
             }
             else if (device.platform === 'Android') {
-                scheme = 'com.twitter.android';
+                scheme = $scope.packageName;
             }
 
             appAvailability.check(
