@@ -23,7 +23,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
                 //    }
                 //}
             })
-    .when('/pay/',
+    .when('/pay',
         {
             controller: 'MainCtrl',
             templateUrl: 'app/partials/home.html'

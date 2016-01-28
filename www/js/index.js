@@ -19,8 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function () {
-        //this.runAngular();
-        this.bindEvents();
+        this.runAngular();
+        //this.bindEvents();
     },
     // Bind Event Listeners
     //
@@ -51,8 +51,8 @@ var app = {
     },
     
     runAngular: function () {
-        var el = document.getElementsByClassName('app');
-        document.remove(el);
+        var elem = document.getElementsByClassName("app");
+        elem[0].parentNode.removeChild(elem[0]);
         angular.bootstrap(document, ['climeride']);
     }
 };
