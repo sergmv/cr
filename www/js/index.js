@@ -18,7 +18,8 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
+        //this.runAngular();
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -46,6 +47,10 @@ var app = {
 
         console.log('Received Event: ' + id);
         
+        this.runAngular();
+    },
+    
+    runAngular: function () {
         angular.bootstrap(document, ['climeride']);
     }
 };
