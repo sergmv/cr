@@ -4,7 +4,7 @@
         $scope.greeting = 'Welcome!';
 
         $scope.test = function() {
-            alert("alert test");
+            alert(device.platform);
             
             var scheme;
 
