@@ -19,8 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function () {
-        //this.runAngular();
-        this.bindEvents();
+        this.runAngular();
+        //this.bindEvents();
     },
     // Bind Event Listeners
     //
@@ -40,10 +40,12 @@ var app = {
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        //var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        var el = document.getElementsByClassName('app');
+        document.remove(el);
+        //receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
         
@@ -51,6 +53,8 @@ var app = {
     },
     
     runAngular: function () {
+        var el = document.getElementsByClassName('app');
+        document.remove(el);
         angular.bootstrap(document, ['climeride']);
     }
 };
