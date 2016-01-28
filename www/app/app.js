@@ -26,7 +26,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
     .when('/pay',
         {
             controller: 'MainCtrl',
-            templateUrl: 'app/partials/home.html'
+            templateUrl: 'app/partials/pay.html'
 
             //offerResponse: function (CouponResolver) { // Inject resources named 'Gists' and 'Meta'
             //    return CouponResolver.resolve;
