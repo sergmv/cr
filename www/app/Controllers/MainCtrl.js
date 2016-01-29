@@ -1,5 +1,5 @@
 ﻿angular.module('climeride.controllers', [])
-    .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('MainCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         
         $scope.greeting = "dsds";
 
@@ -29,10 +29,12 @@
             );
             
         };
-    }]);
-
-angular.module('climeride.controllers', [])
-    .controller('setupCtrl', ['$scope', '$http', function ($scope, $http) {
+        
+        $scope.goToPage = function (routeName) {
+            $location.path(routeName);
+        };
+    }])
+    .controller('setupCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 
 
         $scope.uberAvailable = false;
@@ -83,7 +85,7 @@ angular.module('climeride.controllers', [])
 
         };
         
-        $scope.init();
+//        $scope.init();
 
         $scope.installApp = function (appName) {
             
