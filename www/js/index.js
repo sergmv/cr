@@ -19,8 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function () {
-        //this.runAngular();
-        this.bindEvents();
+        this.runAngular();
+        //this.bindEvents();
     },
     // Bind Event Listeners
     //

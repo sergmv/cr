@@ -23,10 +23,20 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
                 //    }
                 //}
             })
-    .when('/pay',
+    .when('/welcomePage',
         {
             controller: 'MainCtrl',
-            templateUrl: 'app/partials/pay.html'
+            templateUrl: 'app/partials/welcomePage.html'
+
+            //offerResponse: function (CouponResolver) { // Inject resources named 'Gists' and 'Meta'
+            //    return CouponResolver.resolve;
+            //}
+
+        })
+    .when('/benefitPage',
+        {
+            controller: 'MainCtrl',
+            templateUrl: 'app/partials/benefitPage.html'
 
             //offerResponse: function (CouponResolver) { // Inject resources named 'Gists' and 'Meta'
             //    return CouponResolver.resolve;
