@@ -37,8 +37,8 @@
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
 
 
-        $scope.uberAvailable = false;
-        $scope.lyftAvailable = false;
+//        $scope.uberAvailable = false;
+//        $scope.lyftAvailable = false;
 
         $scope.iOSUber = 'uber:';
         $scope.iOSLyft = 'lyft:';
@@ -87,12 +87,9 @@
                     $scope.$digest();
                 }
             );
-            
-            $route.reload();
-
         };
         
-        //$scope.init();
+        $scope.init();
 
         $scope.installApp = function (appName) {
             
