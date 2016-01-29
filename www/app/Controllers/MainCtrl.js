@@ -69,10 +69,12 @@
                 function () {  // Success callback
                     $scope.uberAvailable = true;
                     alert(schemeUber + ' is available :)');
+                    alert($scope.uberAvailable);
                 },
                 function () {  // Error callback
                     $scope.uberAvailable = false;
                     alert(schemeUber + ' is unavailable :)');
+                    alert($scope.uberAvailable);
                 }
             );
             
@@ -81,10 +83,12 @@
                 function () {  // Success callback
                     $scope.lyftAvailable = true;
                     alert(schemeLyft + ' is available :)');
+                    alert($scope.lyftAvailable);
                 },
                 function () {  // Error callback
                     $scope.lyftAvailable = false;
                     alert(schemeLyft + ' is unavailable :)');
+                    alert($scope.lyftAvailable);
                 }
             );
 
