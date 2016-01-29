@@ -77,8 +77,8 @@ angular.module('climeride.controllers', [])
                     
                 };
         
-        $scope.goToPage = function (routeName) {
-            $location.path(routeName);
+        $scope.goToPage = function () {
+            $location.path($scope.pageName);
         };
         //
         //        $scope.updateStatus = function () {
