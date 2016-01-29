@@ -43,5 +43,5 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
             //}
 
         })
-    .otherwise({ redirectTo: '/' });
+    .otherwise({ redirectTo: '/setup' });
 });
