@@ -70,11 +70,13 @@
                     $scope.uberAvailable = true;
                     alert(schemeUber + ' is available :)');
                     alert($scope.uberAvailable);
+                    $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.uberAvailable = false;
                     alert(schemeUber + ' is unavailable :)');
                     alert($scope.uberAvailable);
+                    $scope.$digest();
                 }
             );
             
@@ -84,11 +86,13 @@
                     $scope.lyftAvailable = true;
                     alert(schemeLyft + ' is available :)');
                     alert($scope.lyftAvailable);
+                    $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.lyftAvailable = false;
                     alert(schemeLyft + ' is unavailable :)');
                     alert($scope.lyftAvailable);
+                    $scope.$digest();
                 }
             );
 
