@@ -5,12 +5,12 @@ angular.module('climeride', ['ngRoute', 'climeride.services', 'climeride.control
     .config(function ($routeProvider) {
         $routeProvider
         .when('/', {
-            controller: 'MainCtrl',
-            templateUrl: 'partials/setup.html'
+            controller: 'setupCtrl',
+            templateUrl: 'app/partials/setup.html'
         })
         .when('/welcome', {
-            controller: 'ViewCtrl',
-            templateUrl: 'partials/welcome.html'
+            controller: 'welcomeCtrl',
+            templateUrl: 'app/partials/welcome.html'
         })
         .otherwise({redirectTo: '/'});
     });
