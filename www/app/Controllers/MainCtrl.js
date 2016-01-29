@@ -1,6 +1,6 @@
 ﻿angular.module('climeride.controllers', [])
-    .controller('welcomCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-        alert('welcomCtrl');
+    .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+        alert('welcomeCtrl');
 //        $scope.greeting = "dsds";
 //
 //        $scope.test = function() {

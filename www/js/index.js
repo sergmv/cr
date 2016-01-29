@@ -18,8 +18,7 @@
  */
 var app = {
     // Application Constructor
-    initialize: function () {
-        //this.runAngular();
+    initialize: function() {
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -32,7 +31,7 @@ var app = {
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
+    // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
@@ -40,19 +39,11 @@ var app = {
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
-        //var receivedElement = parentElement.querySelector('.received');
+        var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        //receivedElement.setAttribute('style', 'display:block;');
+        receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        
-//        this.runAngular();
     }
-    
-//    runAngular: function () {
-//        var elem = document.getElementsByClassName("app");
-//        elem[0].parentNode.removeChild(elem[0]);
-//        angular.bootstrap(document, ['climeride']);
-//    }
 };
