@@ -47,14 +47,14 @@ var app = {
 
         console.log('Received Event: ' + id);
         
-        this.runAngular();
+//        this.runAngular();
     },
     
-    runAngular: function () {
-        var elem = document.getElementsByClassName("app");
-        elem[0].parentNode.removeChild(elem[0]);
-        angular.bootstrap(document, ['climeride']);
-    }
+//    runAngular: function () {
+//        var elem = document.getElementsByClassName("app");
+//        elem[0].parentNode.removeChild(elem[0]);
+//        angular.bootstrap(document, ['climeride']);
+//    }
 };
 
 app.initialize();

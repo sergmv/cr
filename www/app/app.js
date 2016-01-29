@@ -1,9 +1,9 @@
-var climerideApp = angular.module('climeride', ['climeride.controllers', 'ngRoute']);
+var climerideApp = angular.module('climeride', ['climeride.controllers', 'climeride.services', 'ngRoute']);
 
 climerideApp.config(function ($routeProvider, $locationProvider) {
 
     //Hide # from url
-    $locationProvider.html5Mode(false);
+    //$locationProvider.html5Mode(false);
     //$locationProvider.hashPrefix('!');
     // Change the default overlay message
 
