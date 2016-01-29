@@ -5,5 +5,5 @@ angular.module('App.controllers', [])
     }])
     .controller('ViewCtrl', ['$scope', function ($scope) {
         $scope.status = "Also totally works!";
-		alert('MainCtrl');
+		alert('ViewCtrl');
     }]);
