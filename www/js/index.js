@@ -48,7 +48,7 @@ var app = {
         console.log('Received Event: ' + id);
         
 //        this.runAngular();
-    },
+    }
     
 //    runAngular: function () {
 //        var elem = document.getElementsByClassName("app");
