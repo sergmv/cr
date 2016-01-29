@@ -49,44 +49,44 @@
         $scope.init = function () {
 
 
-            alert(device.platform);
-
-            var schemeUber;
-            var schemeLyft;
-
-            // Don't forget to add the cordova-plugin-device plugin for `device.platform`
-            if (device.platform === 'iOS') {
-                schemeUber = $scope.iOSUber;
-                schemeLyft = $scope.iOSLyft;;
-            }
-            else if (device.platform === 'Android') {
-                schemeUber = $scope.androidUber;
-                schemeLyft = $scope.androidLyft;
-            }
-
-            appAvailability.check(
-                schemeUber,       // URI Scheme or Package Name
-                function () {  // Success callback
-                    $scope.uberAvailable = true;
-                    $scope.$digest();
-                },
-                function () {  // Error callback
-                    $scope.uberAvailable = false;
-                    $scope.$digest();
-                }
-            );
-            
-            appAvailability.check(
-                schemeLyft,       // URI Scheme or Package Name
-                function () {  // Success callback
-                    $scope.lyftAvailable = true;
-                    $scope.$digest();
-                },
-                function () {  // Error callback
-                    $scope.lyftAvailable = false;
-                    $scope.$digest();
-                }
-            );
+//            alert(device.platform);
+//
+//            var schemeUber;
+//            var schemeLyft;
+//
+//            // Don't forget to add the cordova-plugin-device plugin for `device.platform`
+//            if (device.platform === 'iOS') {
+//                schemeUber = $scope.iOSUber;
+//                schemeLyft = $scope.iOSLyft;;
+//            }
+//            else if (device.platform === 'Android') {
+//                schemeUber = $scope.androidUber;
+//                schemeLyft = $scope.androidLyft;
+//            }
+//
+//            appAvailability.check(
+//                schemeUber,       // URI Scheme or Package Name
+//                function () {  // Success callback
+//                    $scope.uberAvailable = true;
+//                    $scope.$digest();
+//                },
+//                function () {  // Error callback
+//                    $scope.uberAvailable = false;
+//                    $scope.$digest();
+//                }
+//            );
+//            
+//            appAvailability.check(
+//                schemeLyft,       // URI Scheme or Package Name
+//                function () {  // Success callback
+//                    $scope.lyftAvailable = true;
+//                    $scope.$digest();
+//                },
+//                function () {  // Error callback
+//                    $scope.lyftAvailable = false;
+//                    $scope.$digest();
+//                }
+//            );
         };
         
         $scope.init();

@@ -3,7 +3,7 @@ var climerideApp = angular.module('climeride', ['climeride.controllers', 'ngRout
 climerideApp.config(function ($routeProvider, $locationProvider) {
 
     //Hide # from url
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
     //$locationProvider.hashPrefix('!');
     // Change the default overlay message
 
