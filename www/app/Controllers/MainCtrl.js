@@ -103,4 +103,9 @@
         $scope.goToPage = function(routeName) {
             $location.path(routeName);
         };
+
+        $scope.updateStatus = function () {
+            $scope.uberAvailable = !$scope.uberAvailable;
+            $scope.lyftAvailable = !$scope.lyftAvailable;
+        };
     }]);
