@@ -30,3 +30,66 @@
             
         };
     }]);
+
+angular.module('climeride.controllers', [])
+    .controller('setupCtrl', ['$scope', '$http', function ($scope, $http) {
+
+
+        $scope.uberAvailable = false;
+        $scope.lyftAvailable = false;
+
+        $scope.iOSUber = 'uber:';
+        $scope.iOSLyft = 'lyft:';
+        
+        $scope.androidUber = 'com.ubercab';
+        $scope.androidLyft = 'me.lyft.android';
+
+        $scope.init = function () {
+
+
+            alert(device.platform);
+
+            var schemeUber;
+            var schemeLyft;
+
+            // Don't forget to add the cordova-plugin-device plugin for `device.platform`
+            if (device.platform === 'iOS') {
+                schemeUber = $scope.packageName;
+            }
+            else if (device.platform === 'Android') {
+                schemeUber = $scope.androidUber;
+                schemeLyft = $scope.androidLyft;
+            }
+
+            appAvailability.check(
+                schemeUber,       // URI Scheme or Package Name
+                function () {  // Success callback
+                    $scope.uberAvailable = true;
+                },
+                function () {  // Error callback
+                    $scope.uberAvailable = false;
+                }
+            );
+            
+            appAvailability.check(
+                schemeLyft,       // URI Scheme or Package Name
+                function () {  // Success callback
+                    $scope.lyftAvailable = true;
+                },
+                function () {  // Error callback
+                    $scope.lyftAvailable = false;
+                }
+            );
+
+        };
+        
+        $scope.init();
+
+        $scope.installApp = function (appName) {
+            
+        };
+
+        $scope.goToPage = function(routeName) {
+            $location.path(routeName);
+        };
+    }]);

@@ -12,8 +12,8 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
         
         .when('/',
             {
-                controller: 'MainCtrl',
-                templateUrl: 'app/partials/home.html'
+                controller: 'setupCtrl',
+                templateUrl: 'app/partials/setupPage.html'
                 //,
                 //resolve: {
                 //    couponsresolve: function (repoService) {

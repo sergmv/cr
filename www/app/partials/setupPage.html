@@ -1,0 +1,31 @@
+﻿<div style="margin: 0 1% 0 1%" class="">
+
+    <label for="isS">(1) Choose Carrier</label>
+    <select id="isS">
+        <option value="1">LINKS INSURANCE SERVICE</option>
+        <option value="2">LINKS INSURANCE SERVICE 2</option>
+    </select>
+    
+    <p>(2) Enter Policy Information</p>
+    <label for="polNumber">Policy Number</label>
+    <input type="text" id="polNumber" name="policyNumber" placeholder="Policy Number" />
+
+    <label for="prInshured">Primary Inshured</label>
+    <input type="text" id="prInshured" name="prInshured" placeholder="Primary Inshured" />
+
+    <label for="zipCode">Billing Zip Code</label>
+    <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code" />
+
+    <div class="clearfix"></div>
+    <p>(3) Install Ride Share Application</p>
+    
+    <span ng-show="!lyftAvailable">Lyft not found</span> <button ng-disabled="lyftAvailable" ng-click="installApp('lyft')">Install Lyft</button>
+    <span ng-show="uberAvailable">Uber found</span> <button ng-disabled="uberAvailable" ng-click="installApp('uber')">Install Uber</button>
+
+    <p>(4) Install Ride Share Application</p>
+    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage('/welcomePage')">Confirm registration</div>
+    {{uberAvailable}}
+    {{lyftAvailable}}
+</div>
+
+
