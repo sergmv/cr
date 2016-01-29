@@ -25,7 +25,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
             })
     .when('/welcome',
         {
-            controller: 'MainCtrl',
+            controller: 'welcomCtrl',
             templateUrl: 'app/partials/welcomePage.html'
 
             //offerResponse: function (CouponResolver) { // Inject resources named 'Gists' and 'Meta'
@@ -35,7 +35,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
         })
     .when('/benefit',
         {
-            controller: 'MainCtrl',
+            controller: 'welcomCtrl',
             templateUrl: 'app/partials/benefitPage.html'
 
             //offerResponse: function (CouponResolver) { // Inject resources named 'Gists' and 'Meta'
