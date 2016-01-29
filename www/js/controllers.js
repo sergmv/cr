@@ -1,4 +1,4 @@
-angular.module('App.controllers', [])
+angular.module('climeride.controllers', [])
     .controller('MainCtrl', ['$scope', function ($scope) {
 		alert('MainCtrl');
         $scope.status = "It works!";

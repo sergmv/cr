@@ -1,4 +1,4 @@
-angular.module('App', ['ngRoute', 'App.services', 'App.controllers'])
+angular.module('climeride', ['ngRoute', 'climeride.services', 'climeride.controllers'])
     // .config(['$compileProvider', function ($compileProvider) {
     //     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     // }])
@@ -6,11 +6,11 @@ angular.module('App', ['ngRoute', 'App.services', 'App.controllers'])
         $routeProvider
         .when('/', {
             controller: 'MainCtrl',
-            templateUrl: 'partials/main.html'
+            templateUrl: 'partials/setup.html'
         })
-        .when('/view', {
+        .when('/welcome', {
             controller: 'ViewCtrl',
-            templateUrl: 'partials/view.html'
+            templateUrl: 'partials/welcome.html'
         })
         .otherwise({redirectTo: '/'});
     });
