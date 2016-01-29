@@ -106,6 +106,8 @@
       <string>fb-messenger-api20140430</string>
       <string>fb-messenger-api</string>
       <string>fbshareextension</string>
+      <string>uber</string>
+      <string>lyft</string>
     </array>
   </gap:config-file>
   
