@@ -1,4 +1,4 @@
-angular.module('climeride.services', [])
+angular.module('App.services', [])
     .factory('cordovaReady', [function () {
         return function (fn) {
             var queue = [],
