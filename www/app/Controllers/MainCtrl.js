@@ -56,7 +56,8 @@
 
             // Don't forget to add the cordova-plugin-device plugin for `device.platform`
             if (device.platform === 'iOS') {
-                schemeUber = $scope.packageName;
+                schemeUber = $scope.iOSUber;
+                schemeLyft = $scope.iOSLyft;;
             }
             else if (device.platform === 'Android') {
                 schemeUber = $scope.androidUber;
