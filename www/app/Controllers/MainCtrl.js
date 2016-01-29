@@ -9,6 +9,8 @@
             alert(device.platform);
             
         };
+
+        $scope.test();
         
         $scope.goToPage = function (routeName) {
             $location.path(routeName);
