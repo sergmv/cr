@@ -10,7 +10,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
     //blockUIConfigProvider.template("<div ng-class=\"{'block-ui-overlay' : blocking}\">jgh j gh jgh j</div>");
     $routeProvider
         
-        .when('/',
+        .when('/setup',
             {
                 controller: 'setupCtrl',
                 templateUrl: 'app/partials/setupPage.html'
@@ -23,7 +23,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
                 //    }
                 //}
             })
-    .when('/welcomePage',
+    .when('/welcome',
         {
             controller: 'MainCtrl',
             templateUrl: 'app/partials/welcomePage.html'
@@ -33,7 +33,7 @@ climerideApp.config(function ($routeProvider, $locationProvider) {
             //}
 
         })
-    .when('/benefitPage',
+    .when('/benefit',
         {
             controller: 'MainCtrl',
             templateUrl: 'app/partials/benefitPage.html'

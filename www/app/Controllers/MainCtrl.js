@@ -67,9 +67,11 @@
                 schemeUber,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.uberAvailable = true;
+                    alert(schemeUber + ' is available :)');
                 },
                 function () {  // Error callback
                     $scope.uberAvailable = false;
+                    alert(schemeUber + ' is unavailable :)');
                 }
             );
             
@@ -77,9 +79,11 @@
                 schemeLyft,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.lyftAvailable = true;
+                    alert(schemeLyft + ' is available :)');
                 },
                 function () {  // Error callback
                     $scope.lyftAvailable = false;
+                    alert(schemeLyft + ' is unavailable :)');
                 }
             );
 
