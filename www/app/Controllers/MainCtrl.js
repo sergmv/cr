@@ -34,7 +34,7 @@
             $location.path(routeName);
         };
     }])
-    .controller('setupCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
 
 
         $scope.uberAvailable = false;
@@ -68,14 +68,10 @@
                 schemeUber,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.uberAvailable = true;
-                    alert(schemeUber + ' is available :)');
-                    alert($scope.uberAvailable);
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.uberAvailable = false;
-                    alert(schemeUber + ' is unavailable :)');
-                    alert($scope.uberAvailable);
                     $scope.$digest();
                 }
             );
@@ -84,17 +80,15 @@
                 schemeLyft,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.lyftAvailable = true;
-                    alert(schemeLyft + ' is available :)');
-                    alert($scope.lyftAvailable);
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.lyftAvailable = false;
-                    alert(schemeLyft + ' is unavailable :)');
-                    alert($scope.lyftAvailable);
                     $scope.$digest();
                 }
             );
+            
+            $route.reload();
 
         };
         
