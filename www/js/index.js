@@ -56,5 +56,3 @@ var app = {
 //        angular.bootstrap(document, ['climeride']);
 //    }
 };
-
-app.initialize();
