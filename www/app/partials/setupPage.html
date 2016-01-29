@@ -20,19 +20,20 @@
     <p>(3) Install Ride Share Application</p>
     
     <span ng-show="!lyftAvailable">Lyft not found</span> <button ng-disabled="lyftAvailable" ng-click="installApp('lyft')">Install Lyft</button>
+    <br/>
     <span ng-show="uberAvailable">Uber found</span> <button ng-disabled="uberAvailable" ng-click="installApp('uber')">Install Uber</button>
 
     <p>(4) Install Ride Share Application</p>
     <div class="btn btn-success two-line-btn float-right" ng-click="goToPage('/welcome')">Confirm registration</div>
-    {{uberAvailable}}
-    {{lyftAvailable}}
-    
-    <div class="btn btn-warning" ng-click="init()">Init</div>
-    <br />
-    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>
-    
-    <br/>
-    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>
+<!--    {{uberAvailable}}-->
+<!--    {{lyftAvailable}}-->
+<!--    -->
+<!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
+<!--    <br />-->
+<!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
+<!--    -->
+<!--    <br/>-->
+<!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
 </div>
 
 
