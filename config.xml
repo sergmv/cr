@@ -40,6 +40,74 @@
     <plugin name="com.ohh2ahh.plugins.appavailability" spec="0.3.1" source="pgb" />
     <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
     <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.0.0" />
+
+  <gap:config-file platform="ios" parent="NSAppTransportSecurity" mode="replace">
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>facebook.com</key>
+        <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
+          <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+          <false/>
+        </dict>
+        <key>fbcdn.net</key>
+        <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
+          <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+          <false/>
+        </dict>
+        <key>akamaihd.net</key>
+        <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
+          <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+          <false/>
+        </dict>
+      </dict>
+    </dict>
+  </gap:config-file>
+  <gap:config-file platform="ios" parent="LSApplicationQueriesSchemes" mode="replace">
+    <array>
+      <string>fb</string>
+      <string>twitter</string>
+      <string>gplus</string>
+      <string>pintrest</string>
+      <string>instagram</string>
+      <string>youtube</string>
+      <string>vnd.youtube</string>
+      <string>yelp</string>
+      <string>linkedin</string>
+      <string>tumblr</string>
+      <string>whatsapp</string>
+      <string>snapchat</string>
+      <string>comgooglemaps</string>
+      <string>amazon</string>
+      <string>skype</string>
+      <string>googledrive</string>
+      <string>itms-apps</string>
+      <string>paypal</string>
+      <string>fbapi</string>
+      <string>fbapi20130214</string>
+      <string>fbapi20130410</string>
+      <string>fbapi20130702</string>
+      <string>fbapi20131010</string>
+      <string>fbapi20131219</string>
+      <string>fbapi20140410</string>
+      <string>fbapi20140116</string>
+      <string>fbapi20150313</string>
+      <string>fbapi20150629</string>
+      <string>fbauth</string>
+      <string>fbauth2</string>
+      <string>fb-messenger-api20140430</string>
+      <string>fb-messenger-api</string>
+      <string>fbshareextension</string>
+    </array>
+  </gap:config-file>
   
   
   
