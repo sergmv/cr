@@ -85,7 +85,7 @@
 
         };
         
-//        $scope.init();
+        $scope.init();
 
         $scope.installApp = function (appName) {
             
