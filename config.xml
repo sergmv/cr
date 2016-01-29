@@ -1,16 +1,50 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.climeride" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.phonegap.climeride" 
+        version="0.0.1" 
+        xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:android   = "http://schemas.android.com/apk/res/android"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        versionCode = "100">
+  <preference name='phonegap-version' value='cli-5.4.1' />
+  
     <name>ClimeRide</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+      Clime Ride demo app
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="sergmedin@gmail.com" href="http://cordova.io">
+      Clime Ride Team
     </author>
     <content src="index.html" />
+
+    <!-- Android SECTION -->
+    <config-file platform="android" parent="/manifest" mode="merge" >
+      <!-- Add Android extensions here. -->
+      <!-- SEE: http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements -->
+    </config-file>
+
+    <!-- iOS SECTION -->
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+      <!-- Add iOS extensions here. SEE: http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements -->
+      <key>NSAppTransportSecurity</key>
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
+
+    <!-- App requested permission -->
+    <preference name="permissions" value="none"/>
+  
+  
     <plugin name="cordova-plugin-whitelist" version="1" />
     <plugin name="com.ohh2ahh.plugins.appavailability" spec="0.3.1" source="pgb" />
     <plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />
+    <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
+    <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.0.0" />
+  
+  
+  
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
