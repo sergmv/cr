@@ -24,17 +24,9 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+    background:url(../img/background.png) no-repeat center top;
+    background-color:#242A34;
+    background-size: cover;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -123,4 +115,64 @@ h1 {
 
 .float-right {
     float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.input-container {
+    width: 100%;
+    margin: 40% 0 0 0;
+}
+
+.input-container input, select {
+    border: 0px;
+    background: rgba(49, 55, 64, 0.7);
+    display:flexbox;
+    width: 88%;
+    border-radius: 0px;
+    font-size: 14px;
+    display: block;
+    margin : 10px auto;
+    padding: 10px;
+    color: white;
+}
+
+.input-container select {
+    height: 40px;
+}
+
+option[default] {
+  display: none;
+}
+
+.btn-get-started {
+    background: #EB5767;
+    border-radius: 25px;
+    width: 82%;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 25px auto;
+}
+
+.btn-app-status {
+    background: #00BDBD;
+    border-radius: 30px;
+    padding: 5px;
+    text-align: center;
+    width: 45%;
+    display: inline-block;
+}
+
+.app-status-installed {
+    color: gray;
+}
+
+.app-status-notinstalled {
+    color: white;
 }

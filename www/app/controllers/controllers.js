@@ -1,6 +1,6 @@
 angular.module('climeride.controllers', [])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-        alert('welcomeCtrl');
+//        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
         //        $scope.test = function() {
@@ -17,10 +17,10 @@ angular.module('climeride.controllers', [])
         };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
-        alert('setupCtrl');
+//        alert('setupCtrl');
         
-        //        $scope.uberAvailable = false;
-        //        $scope.lyftAvailable = false;
+        //        $scope.uberIsInstalled = false;
+        //        $scope.lyftIsInstalled = false;
         
                 $scope.iOSUber = 'uber:';
                 $scope.iOSLyft = 'lyft:';
@@ -49,11 +49,11 @@ angular.module('climeride.controllers', [])
                     appAvailability.check(
                         schemeUber,       // URI Scheme or Package Name
                         function () {  // Success callback
-                            $scope.uberAvailable = true;
+                            $scope.uberIsInstalled = true;
                             $scope.$digest();
                         },
                         function () {  // Error callback
-                            $scope.uberAvailable = false;
+                            $scope.uberIsInstalled = false;
                             $scope.$digest();
                         }
                     );
@@ -61,11 +61,11 @@ angular.module('climeride.controllers', [])
                     appAvailability.check(
                         schemeLyft,       // URI Scheme or Package Name
                         function () {  // Success callback
-                            $scope.lyftAvailable = true;
+                            $scope.lyftIsInstalled = true;
                             $scope.$digest();
                         },
                         function () {  // Error callback
-                            $scope.lyftAvailable = false;
+                            $scope.lyftIsInstalled = false;
                             $scope.$digest();
                         }
                     );
@@ -79,6 +79,14 @@ angular.module('climeride.controllers', [])
         
         $scope.goToPage = function () {
             $location.path($scope.pageName);
+        };
+
+        $scope.getAppStatusClass = function(isInstalled) {
+            if (isInstalled) {
+                return 'app-status-installed';
+            } else {
+                return 'app-status-notinstalled';
+            }
         };
         //
         //        $scope.updateStatus = function () {
