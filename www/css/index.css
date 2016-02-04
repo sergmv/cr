@@ -167,6 +167,7 @@ option[default] {
     text-align: center;
     width: 45%;
     display: inline-block;
+    font-weight: 600;
 }
 
 .app-status-installed {
