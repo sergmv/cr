@@ -17,7 +17,7 @@ angular.module('climeride.controllers', [])
         };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
-//        alert('setupCtrl');
+        alert('setupCtrl');
         
                 $scope.uberIsInstalled = false;
                 $scope.lyftIsInstalled = false;
