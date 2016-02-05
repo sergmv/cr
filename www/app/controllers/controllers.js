@@ -108,7 +108,7 @@ angular.module('climeride.controllers', [])
                 window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
             } else {
                 if (device.platform == "Android") {
-                    window.open("market://details?id=" + appStoreId);
+                    window.open("market://details?id=" + appStoreId+",'_system'");
                 }
             }
             
