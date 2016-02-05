@@ -56,8 +56,10 @@ angular.module('climeride.controllers', [])
                 schemeUber = $scope.androidUber;
                 schemeLyft = $scope.androidLyft;
                 
-//                $scope.storeUberId = androidUber;
-//                $scope.storeLyftId = androidLyft;
+                $scope.storeUberId = androidUber;
+                $scope.storeLyftId = androidLyft;
+
+                alert("android links " + $scope.storeUberId + " " + $scope.storeUberId);
             }
 
             appAvailability.check(
