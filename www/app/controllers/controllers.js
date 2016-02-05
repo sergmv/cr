@@ -19,8 +19,8 @@ angular.module('climeride.controllers', [])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
         alert('setupCtrl');
         
-//                $scope.uberIsInstalled = false;
-//                $scope.lyftIsInstalled = false;
+                $scope.uberIsInstalled = false;
+                $scope.lyftIsInstalled = true;
         
                 $scope.iOSUber = 'uber:';
                 $scope.iOSLyft = 'lyft:';
@@ -29,8 +29,10 @@ angular.module('climeride.controllers', [])
                 $scope.androidLyft = 'me.lyft.android';
         
                 $scope.init = function () {
-        
-        
+
+                    if (typeof device == "undefined") {
+                        return;
+                    }
                     alert(device.platform);
         
                     var schemeUber;
