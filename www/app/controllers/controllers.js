@@ -92,7 +92,7 @@ angular.module('climeride.controllers', [])
         $scope.init();
 
         $scope.installApp = function (appName) {
-            alert('Install app run');
+            alert('Install app run ' + appName + device.platform);
             var appStoreId = {};
 
             if (appName == "uber") {
@@ -102,6 +102,8 @@ angular.module('climeride.controllers', [])
                     appStoreId = $scope.storeLyftId;
                 }
             }
+            
+            alert('Install app appStoreId ' + appStoreId);
             if (device.platform == "iOS") {
                 window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
             } else {
