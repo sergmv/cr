@@ -46,15 +46,16 @@ angular.module('climeride.controllers', [])
                 schemeUber = $scope.iOSUber;
                 schemeLyft = $scope.iOSLyft;;
 
-                $scope.storeUberId = appStoreUberId;
-                $scope.storeLyftId = appStoreLyftId;
+                $scope.storeUberId = $scope.appStoreUberId;
+                $scope.storeLyftId = $scope.appStoreLyftId;
             }
             else if (device.platform === 'Android') {
+                alert("android links " + device.platform);
                 schemeUber = $scope.androidUber;
                 schemeLyft = $scope.androidLyft;
                 
-                $scope.storeUberId = androidUber;
-                $scope.storeLyftId = androidLyft;
+                $scope.storeUberId = $scope.androidUber;
+                $scope.storeLyftId = $scope.androidLyft;
 
                 alert("android links " + $scope.storeUberId + " " + $scope.storeUberId);
             }
