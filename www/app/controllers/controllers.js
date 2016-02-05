@@ -17,10 +17,10 @@ angular.module('climeride.controllers', [])
         };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
-        alert('setupCtrl');
+//        alert('setupCtrl');
         
-                $scope.uberIsInstalled = false;
-                $scope.lyftIsInstalled = true;
+//                $scope.uberIsInstalled = false;
+//                $scope.lyftIsInstalled = true;
         
                 $scope.iOSUber = 'uber:';
                 $scope.iOSLyft = 'lyft:';
@@ -52,12 +52,12 @@ angular.module('climeride.controllers', [])
                         schemeUber,       // URI Scheme or Package Name
                         function () {  // Success callback
                             $scope.uberIsInstalled = true;
-                            alert("Uber installed");
+//                            alert("Uber installed");
                             $scope.$digest();
                         },
                         function () {  // Error callback
                             $scope.uberIsInstalled = false;
-                            alert("Uber not installed");
+//                            alert("Uber not installed");
                             $scope.$digest();
                         }
                     );
@@ -66,12 +66,12 @@ angular.module('climeride.controllers', [])
                         schemeLyft,       // URI Scheme or Package Name
                         function () {  // Success callback
                             $scope.lyftIsInstalled = true;
-                            alert("Lyft installed");
+//                            alert("Lyft installed");
                             $scope.$digest();
                         },
                         function () {  // Error callback
                             $scope.lyftIsInstalled = false;
-                            alert("Lyft not installed");
+//                            alert("Lyft not installed");
                             $scope.$digest();
                         }
                     );
