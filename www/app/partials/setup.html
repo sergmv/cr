@@ -20,10 +20,10 @@
     <!--    <br>-->
     <!--    <span ng-show="uberAvailable">Uber found</span> <button ng-disabled="uberAvailable" ng-click="installApp('uber')">Install Uber</button>-->
     <div style="    padding: 0 15px;">
-        <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="installApp('lyft')">Install
+        <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="lyftIsInstalled || installApp('lyft')">Install
             <img src="./../www/img/lyft_logo.png" /></div>
 
-        <div class="btn-app-status float-right" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="installApp('uber')">Install U
+        <div class="btn-app-status float-right" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="uberIsInstalled || installApp('uber')">Install U
             <img src="./../www/img/uber_logo.png" /></div>
     </div>
     <!---->
