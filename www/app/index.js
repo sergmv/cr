@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        //angular.bootstrap(document, ["climeride"]);
     },
     // Bind Event Listeners
     //
@@ -39,7 +40,7 @@ var app = {
     receivedEvent: function (id) {
         alert("ready");
         
-        angular.bootstrap(document,"climeride");
+        angular.bootstrap(document,["climeride"]);
 //        var parentElement = document.getElementById(id);
 //        var listeningElement = parentElement.querySelector('.listening');
 //        var receivedElement = parentElement.querySelector('.received');
