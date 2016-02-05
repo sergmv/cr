@@ -31,9 +31,6 @@ angular.module('climeride.controllers', [])
         $scope.appStoreUberId = '368677368';
         $scope.appStoreLyftId = '529379082';
 
-        $scope.storeUberId = "";
-        $scope.storeLyftId = "";
-
         $scope.init = function () {
 
             if (typeof device == "undefined") {
