@@ -80,7 +80,10 @@ angular.module('climeride.controllers', [])
         $scope.init();
 
         $scope.installApp = function (appName) {
-            window.open()
+            if (device.platform == "iOS") {
+                window.open("itms-apps://itunes.apple.com/app/id" + "368677368");
+            }
+            
         };
 
         $scope.goToPage = function () {

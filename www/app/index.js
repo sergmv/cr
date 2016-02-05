@@ -41,7 +41,7 @@ var app = {
         alert("ready");
         
         // set to either landscape
-        screen.lockOrientation('landscape');
+        screen.lockOrientation('portrait');
         
         angular.bootstrap(document,["climeride"]);
 //        var parentElement = document.getElementById(id);
