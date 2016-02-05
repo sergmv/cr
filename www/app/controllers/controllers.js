@@ -107,11 +107,8 @@ angular.module('climeride.controllers', [])
             if (device.platform == "iOS") {
                 window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
             } else {
-                window.open("market://details?id=" + appStoreId);
-                window.open("http://market.android.com/details?id=me.lyft.android");
-                
                 if (device.platform == "Android") {
-                    window.open("market://details?id=" + appStoreId);
+                    window.open('https://play.google.com/store/apps/details?id=' + appStoreId, '_system');
                 }
             }
             
