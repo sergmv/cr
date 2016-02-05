@@ -27,6 +27,12 @@ angular.module('climeride.controllers', [])
 
         $scope.androidUber = 'com.ubercab';
         $scope.androidLyft = 'me.lyft.android';
+        
+        $scope.appStoreUberId = '368677368';
+        $scope.appStoreLyftId = '529379082';
+
+        $scope.storeUberId = "";
+        $scope.storeLyftId = "";
 
         $scope.init = function () {
 
@@ -42,10 +48,16 @@ angular.module('climeride.controllers', [])
             if (device.platform === 'iOS') {
                 schemeUber = $scope.iOSUber;
                 schemeLyft = $scope.iOSLyft;;
+
+                $scope.storeUberId = appStoreUberId;
+                $scope.storeLyftId = appStoreLyftId;
             }
             else if (device.platform === 'Android') {
                 schemeUber = $scope.androidUber;
                 schemeLyft = $scope.androidLyft;
+                
+                $scope.storeUberId = androidUber;
+                $scope.storeLyftId = androidLyft;
             }
 
             appAvailability.check(
@@ -80,8 +92,22 @@ angular.module('climeride.controllers', [])
         $scope.init();
 
         $scope.installApp = function (appName) {
+
+            var appStoreId = {};
+
+            if (appName == "Uber") {
+                appStoreId = $scope.storeUberId;
+            } else {
+                if (appName == "Lyft") {
+                    appStoreId = $scope.storeLyftId;
+                }
+            }
             if (device.platform == "iOS") {
-                window.open("itms-apps://itunes.apple.com/app/id" + "368677368");
+                window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
+            } else {
+                if (device.platform == "Android") {
+                    window.open("market://details?id=" + appStoreId);
+                }
             }
             
         };
