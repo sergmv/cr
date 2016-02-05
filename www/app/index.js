@@ -20,7 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        //angular.bootstrap(document, ["climeride"]);
+//        angular.bootstrap(document, ["climeride"]);
     },
     // Bind Event Listeners
     //
@@ -38,7 +38,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-        alert("ready");
+//        alert("ready");
         
         // set to either landscape
         screen.lockOrientation('portrait');

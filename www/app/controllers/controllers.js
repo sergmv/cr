@@ -36,7 +36,7 @@ angular.module('climeride.controllers', [])
             if (typeof device == "undefined") {
                 return;
             }
-            alert(device.platform);
+//            alert(device.platform);
 
             var schemeUber;
             var schemeLyft;
@@ -50,26 +50,24 @@ angular.module('climeride.controllers', [])
                 $scope.storeLyftId = $scope.appStoreLyftId;
             }
             else if (device.platform === 'Android') {
-                alert("android links " + device.platform);
                 schemeUber = $scope.androidUber;
                 schemeLyft = $scope.androidLyft;
                 
                 $scope.storeUberId = $scope.androidUber;
                 $scope.storeLyftId = $scope.androidLyft;
 
-                alert("android links " + $scope.storeUberId + " " + $scope.storeUberId);
             }
 
             appAvailability.check(
                 schemeUber,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.uberIsInstalled = true;
-                                                alert("Uber installed");
+//                                                alert("Uber installed");
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.uberIsInstalled = false;
-                                                alert("Uber not installed");
+//                                                alert("Uber not installed");
                     $scope.$digest();
                 }
             );
@@ -78,12 +76,12 @@ angular.module('climeride.controllers', [])
                 schemeLyft,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.lyftIsInstalled = true;
-                                                alert("Lyft installed");
+//                                                alert("Lyft installed");
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.lyftIsInstalled = false;
-                                                alert("Lyft not installed");
+//                                                alert("Lyft not installed");
                     $scope.$digest();
                 }
             );
@@ -92,7 +90,7 @@ angular.module('climeride.controllers', [])
         $scope.init();
 
         $scope.installApp = function (appName) {
-            alert('Install app run ' + appName + device.platform);
+//            alert('Install app run ' + appName + device.platform);
             var appStoreId = {};
 
             if (appName == "uber") {
@@ -115,7 +113,7 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.goToPage = function (pageName) {
-            $location.path(pageName);
+//            $location.path(pageName);
         };
 
         $scope.getAppStatusClass = function (isInstalled) {
