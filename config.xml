@@ -115,7 +115,7 @@
     </array>
   </gap:config-file>
 
-  <gap:splash src="splash.png"/>
+<!--  <gap:splash src="splash.png"/>-->
 
 
   <access origin="*" />
