@@ -101,7 +101,6 @@ angular.module('climeride.controllers', [])
                 }
             }
             
-            alert('Install app appStoreId ' + appStoreId);
             if (device.platform == "iOS") {
                 window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
             } else {
