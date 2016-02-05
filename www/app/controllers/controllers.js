@@ -104,9 +104,16 @@ angular.module('climeride.controllers', [])
             }
             
             alert('Install app appStoreId ' + appStoreId);
-            window.open("market://details?=me.lyft.android", "_system");
-            
-            
+            if (device.platform == "iOS") {
+                window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
+            } else {
+                window.open("market://details?id=" + appStoreId);
+                window.open("http://market.android.com/details?id=me.lyft.android");
+                
+                if (device.platform == "Android") {
+                    window.open("market://details?id=" + appStoreId);
+                }
+            }
             
         };
 
