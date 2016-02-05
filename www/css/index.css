@@ -181,9 +181,9 @@ option[default] {
 }
 
 img {
-    height: auto; 
+    height: 60px; 
     width: auto; 
-    max-width: 120px; 
+    max-width: 150px; 
     max-height: 60px;
 }
 
