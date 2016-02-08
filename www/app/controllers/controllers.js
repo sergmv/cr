@@ -108,11 +108,22 @@ angular.module('climeride.controllers', [])
                     window.open('https://play.google.com/store/apps/details?id=' + appStoreId, '_system');
                 }
             }
-            
         };
 
         $scope.goToPage = function (pageName) {
             $location.path(pageName);
+        };
+
+        $scope.alreadyRemove = false;
+        
+        $scope.removeDefaultOption = function() {
+            
+            
+            if (!$scope.alreadyRemove) {
+                var x = document.getElementById("isS");
+                x.remove(x.selectedIndex);
+                $scope.alreadyRemove = true;
+            }
         };
 
         $scope.getAppStatusClass = function (isInstalled) {
