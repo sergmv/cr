@@ -112,7 +112,7 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.goToPage = function (pageName) {
-//            $location.path(pageName);
+            $location.path(pageName);
         };
 
         $scope.getAppStatusClass = function (isInstalled) {
