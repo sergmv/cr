@@ -29,7 +29,7 @@ body {
     background-size: cover;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:16pt;
     height:100%;
     margin:0px;
     padding:0px;
@@ -122,17 +122,31 @@ h1 {
 }
 
 .input-container {
-    width: 100%;
-    margin: 40% 0 0 0;
+    width: 90%;
+    margin: 30% auto;
 }
 
-.input-container input, select {
+.input-container input {
     border: 0px;
     background: rgba(49, 55, 64, 0.7);
     display:flexbox;
-    width: 88%;
+    width: 100%;
     border-radius: 0px;
-    font-size: 14px;
+    font-size: 18px;
+    display: block;
+    margin : 10px auto;
+    padding: 25px;
+    color: white;
+    box-sizing : border-box;
+}
+
+.input-container select {
+    border: 0px;
+    background: rgba(49, 55, 64, 0.7);
+    display:flexbox;
+    width: 100%;
+    border-radius: 0px;
+    font-size: 18px;
     display: block;
     margin : 10px auto;
     padding: 10px;
