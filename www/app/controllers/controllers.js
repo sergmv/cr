@@ -3,14 +3,14 @@ angular.module('climeride.controllers', [])
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
-        //        $scope.test = function() {
-        //            
-        //            
-        //            alert(device.platform);
-        //            
-        //        };
-        //
-        //        $scope.test();
+                $scope.init = function() {
+                    
+                    
+                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
+                    
+                };
+        
+                $scope.init();
         //        
         $scope.goToPage = function (routeName) {
             $location.path(routeName);
@@ -34,14 +34,14 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
 
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 10 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
 
             if (typeof device == "undefined") {
                 return;
             }
 
-            $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 10;
+            $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 20;
             $scope.MH = $('#content-ctr').height();
 
             $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
