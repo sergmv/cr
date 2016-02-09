@@ -143,9 +143,48 @@ h1 {
     float: left;
 }
 
+
+
+
+.responsive-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.dummy {
+    padding-top: 100%; /* forces 1:1 aspect ratio */
+}
+
+.img-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    text-align:center; /* Align center inline elements */
+    font: 0/0 a;
+}
+
+.img-container .centerer {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.img-container img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+
+
+
 .input-container {
     width: 90%;
-    margin: 10% auto 20px;
+    margin: 0 auto 20px;
 }
 
     .input-container input {
@@ -267,7 +306,7 @@ option[default] {
     background: #00BDBD;
 }
 
-img {
+.btn-app-status img {
     height: 60px;
     width: auto;
     max-width: 100px;
@@ -300,7 +339,7 @@ span.app-found-icon {
     padding: 20px;
     font-weight: 600;
     cursor: pointer;
-    margin: 25px auto;
+    margin: 5px auto 20px;
 }
 
 
@@ -344,7 +383,7 @@ input {
         font-size: 15px;
     }
 
-    img {
+    .btn-app-status img {
         height: 40px;
         max-width: 80px;
     }

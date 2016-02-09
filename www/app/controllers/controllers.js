@@ -37,6 +37,15 @@ angular.module('climeride.controllers', [])
             if (typeof device == "undefined") {
                 return;
             }
+            
+
+            $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
+            $scope.physicalScreenHeight = window.screen.height * window.devicePixelRatio;
+            
+            $scope.height = window.screen.height;
+            $scope.width = window.screen.width;
+            $scope.devicePixelRatio = window.devicePixelRatio;
+            
 //            alert(device.platform);
 
             var schemeUber;
