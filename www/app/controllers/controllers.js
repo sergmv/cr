@@ -34,10 +34,12 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
 
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 10 + 'px' });
+
+
             if (typeof device == "undefined") {
                 return;
             }
-            
 
             $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
             $scope.physicalScreenHeight = window.screen.height * window.devicePixelRatio;
@@ -46,7 +48,8 @@ angular.module('climeride.controllers', [])
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
             
-//            alert(device.platform);
+            //            alert(device.platform);
+
 
             var schemeUber;
             var schemeLyft;
