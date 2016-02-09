@@ -26,7 +26,7 @@ body {
     -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
     background: url(../img/background.png) no-repeat center top;
     background-color: #242A34;
-    background-size: cover;
+    background-size: 100% auto;
     background-attachment: fixed;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 16pt;
