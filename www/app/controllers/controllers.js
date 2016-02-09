@@ -41,6 +41,9 @@ angular.module('climeride.controllers', [])
                 return;
             }
 
+            $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 10;
+            $scope.MH = $('#content-ctr').height();
+
             $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
             $scope.physicalScreenHeight = window.screen.height * window.devicePixelRatio;
             
