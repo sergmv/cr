@@ -12,9 +12,9 @@ angular.module('climeride.controllers', [])
         
                 $scope.init();
         //        
-        $scope.goToPage = function (routeName) {
-            $location.path(routeName);
-        };
+                $scope.goToPage = function (pageName) {
+                    $location.path(pageName);
+                };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
         //alert('setupCtrl');
