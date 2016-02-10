@@ -1,19 +1,19 @@
-<div style="position: absolute; bottom: 1px; width: 100%; text-align: center; padding-top: 25px;">
-    <div id="imgCtr" style="line-height: 50px;">
+<div style="position: absolute; width: 100%; bottom: 0px; text-align: center; padding-top: 25px;">
+    <div id="imgCtr" style="line-height: 0px;">
         <img src="../www/img/logo.png" style="vertical-align: middle; width: 70%" />
     </div>
 
     <div id="content-ctr">
         <div class="input-container">
-<!--            <div style="color: white; position: fixed; top:1px;left: 3%;">-->
-<!--                <p ng-bind="logCtrH"></p>-->
-<!--                <p ng-bind="MH"></p>-->
-<!--                <p ng-bind="physicalScreenWidth"></p>-->
-<!--                <p ng-bind="physicalScreenHeight"></p>-->
-<!--                <p ng-bind="height"></p>-->
-<!--                <p ng-bind="width"></p>-->
-<!--                <p ng-bind="devicePixelRatio"></p>-->
-<!--            </div>-->
+            <div style="color: white; position: fixed; top:1px;left: 3%; text-align: left; font-size: 12px">
+                <span>logoCtrH </span><span ng-bind="logoCtrH"></span><br/>
+                <span>MH </span><span ng-bind="MH"></span><br/>
+                <span>physicalScreenWidth </span><span ng-bind="physicalScreenWidth"></span><br/>
+                <span>physicalScreenHeight </span><span ng-bind="physicalScreenHeight"></span><br/>
+                <span>height </span><span ng-bind="height"></span><br/>
+                <span>width </span><span ng-bind="width"></span><br/>
+                <span>devicePixelRatio </span><span ng-bind="devicePixelRatio"></span><br/>
+            </div>
             <div class="select-container">
                 <select id="isS" ng-click="removeDefaultOption()">
                     <option value="def" default selected>Choose Carrier</option>

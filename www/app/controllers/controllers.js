@@ -34,14 +34,12 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
 
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 30 + 'px' });
 
 
-            if (typeof device == "undefined") {
-                return;
-            }
+            
 
-            $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 20;
+            $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
             $scope.MH = $('#content-ctr').height();
 
             $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
@@ -51,7 +49,9 @@ angular.module('climeride.controllers', [])
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
             
-            //            alert(device.platform);
+            if (typeof device == "undefined") {
+                return;
+            }
 
 
             var schemeUber;
