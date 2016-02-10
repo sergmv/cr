@@ -132,15 +132,15 @@ angular.module('climeride.controllers', [])
 
         $scope.alreadyRemove = false;
         
-        $scope.removeDefaultOption = function() {
-            
-            
-            if (!$scope.alreadyRemove) {
-                var x = document.getElementById("isS");
-                x.remove(x.selectedIndex);
-                $scope.alreadyRemove = true;
-            }
-        };
+//        $scope.removeDefaultOption = function() {
+//            
+//            
+//            if (!$scope.alreadyRemove) {
+//                var x = document.getElementById("isS");
+//                x.remove(x.selectedIndex);
+//                $scope.alreadyRemove = true;
+//            }
+//        };
 
         $scope.getAppStatusClass = function (isInstalled) {
             if (isInstalled) {
