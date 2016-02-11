@@ -371,7 +371,7 @@ input {
 }*/
 
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
     .btn-app-status {
         height: 30px;
         font-size: 1em;
@@ -385,4 +385,4 @@ input {
     .app-status-container > div {
         height: 10vh;
     }
-}
+}*/
