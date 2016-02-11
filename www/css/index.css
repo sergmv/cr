@@ -28,8 +28,9 @@ body {
     background-color: #242A34;
     background-size: 100% auto;
     background-attachment: fixed;
+    background-position: top left;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 16pt;
+    font-size: 4vw;
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -70,24 +71,6 @@ h1 {
     text-align: center;
 }
 
-.event {
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    color: #FFFFFF;
-    font-size: 12px;
-    margin: 0px 30px;
-    padding: 2px 0px;
-}
-
-    .event.listening {
-        background-color: #333333;
-        display: block;
-    }
-
-    .event.received {
-        background-color: #4B946A;
-        display: none;
-    }
 
 @keyframes fade {
     from {
@@ -147,8 +130,8 @@ h1 {
 
 .responsive-container {
     position: relative;
-    width: 100%;
-    border: 1px solid white;
+    width: 100vw;
+    border: 1vw solid white;
 }
 
 .dummy {
@@ -161,21 +144,20 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-    
-    text-align:center; /* Align center inline elements */
+    text-align: center; /* Align center inline elements */
     font: 0/0 a;
 }
 
-.img-container .centerer {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
+    .img-container .centerer {
+        display: inline-block;
+        vertical-align: middle;
+        height: 100vh;
+    }
 
-.img-container img {
-    vertical-align: middle;
-    display: inline-block;
-}
+    .img-container img {
+        vertical-align: middle;
+        display: inline-block;
+    }
 
 
 
@@ -192,12 +174,13 @@ h1 {
         display: flexbox;
         width: 100%;
         border-radius: 0px;
-        font-size: 14pt;
+        font-size: 1em;
         display: block;
         margin: 10px auto;
         padding: 20px;
         color: white;
         box-sizing: border-box;
+        height: 10vw;
     }
 
 .select-container select {
@@ -206,17 +189,16 @@ h1 {
     display: flexbox;
     width: 100%;
     border-radius: 0px;
-    font-size: 14pt;
+    font-size: 1em;
     display: block;
     margin: 10px auto;
-    padding: 5px 20px 5px 20px;
+    padding: 4px 20px 5px 20px;
     color: white;
-    height: 40px;
+    height: 10vw;
 }
 
 
 select {
-    padding: 0 20px 0 5px;
     -webkit-appearance: none;
     /*border-radius: 3px;*/
     /*border: 1px solid #aaaaaa;*/
@@ -239,28 +221,42 @@ select {
     position: relative;
 }
 
-/* Select arrow styling */
-.select-container:after {
+    /* Select arrow styling */
+    .select-container:after {
+        content: "";
+        position: absolute;
+        top: 3.5vw;
+        right: 5px;
+        bottom: 0;
+        font-size: 1em;
+        line-height: 30px;
+        padding: 0 30px;
+        background: url(../img/select-img.png) transparent no-repeat;
+        background-size: 34px 17px;
+        pointer-events: none;
+    }
+
+
+.info-icon:before {
     content: "";
-    position: absolute;
-    top: 15px;
-    right: 5px;
-    bottom: 0;
-    font-size: 60%;
-    line-height: 30px;
-    padding: 0 30px;
-    background: url(../img/select-img.png) transparent no-repeat;
-    background-size: 34px 17px;
+
+    font-size: 1em;
+    padding: 7px 25px;
+    background: url(../img/info-icon.png) transparent no-repeat;
+    background-size: 35px 35px;
     pointer-events: none;
 }
 
+.benefit-icon:before {
+    content: "";
 
-.selectArea {
-    display: none;
-    position: relative;
-    height: 50px;
-    background: #e3e0f3;
+    font-size: 1em;
+    padding: 7px 25px;
+    background: url(../img/benefit-icon.png) transparent no-repeat;
+    background-size: 35px 35px;
+    pointer-events: none;
 }
+
 
 select:focus::-ms-value {
     background: #FFFFFF;
@@ -276,14 +272,14 @@ option[default] {
     margin: 0 auto;
 }
 
-.app-status-container p {
-    color: #fff;
-    margin: 20px 0 15px 0;
-}
+    .app-status-container p {
+        color: #fff;
+        margin: 20px 0 15px 0;
+    }
 
     .app-status-container > div {
         width: 45%;
-        height: 100px;
+        height: 20vh;
     }
 
 
@@ -293,7 +289,6 @@ option[default] {
     padding: 0px 5px;
     text-align: center;
     font-weight: 500;
-    height: 60px;
 }
 
 .app-status-installed {
@@ -306,10 +301,10 @@ option[default] {
 }
 
 .btn-app-status img {
-    height: 60px;
+    height: 10vh;
     width: auto;
-    max-width: 100px;
-    max-height: 60px;
+    max-width: 13vw;
+    max-height: 10vh;
 }
 
 .spn-container {
@@ -333,10 +328,10 @@ span.app-found-icon {
     border-radius: 25px;
     width: 82%;
     color: white;
-    /*font-size: 16px;*/
+    font-size: 1.5em;
     text-align: center;
     padding: 20px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     margin: 5px auto 20px;
 }
@@ -379,11 +374,15 @@ input {
 @media screen and (max-width: 500px) {
     .btn-app-status {
         height: 30px;
-        font-size: 12px;
+        font-size: 1em;
     }
 
-    .btn-app-status img {
-        height: 30px;
-        max-width: 70px;
+        .btn-app-status img {
+            height: 30px;
+            max-width: 70px;
+        }
+
+    .app-status-container > div {
+        height: 10vh;
     }
 }

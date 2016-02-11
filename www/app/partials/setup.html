@@ -4,6 +4,8 @@
     </div>
 
     <div id="content-ctr">
+        
+
         <div class="input-container">
             <div style="color: white; position: fixed; top:1px;left: 3%; text-align: left; font-size: 12px">
                 <span>logoCtrH </span><span ng-bind="logoCtrH"></span><br/>
@@ -42,7 +44,7 @@
             <div class="float-left">
                 <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="lyftIsInstalled || installApp('lyft')">
                     Install
-            <img src="./../www/img/lyft-logo.png" />
+                    <img src="./../www/img/lyft-logo.png" />
                 </div>
                 <div class="spn-container">
                     <span ng-show="lyftIsInstalled" class="app-found-icon">Lyft Found</span>
@@ -51,7 +53,7 @@
             <div class="float-right">
                 <div class="btn-app-status" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="uberIsInstalled || installApp('uber')">
                     Install
-            <img src="./../www/img/uber-logo.png" />
+                    <img src="./../www/img/uber-logo.png" />
                 </div>
                 <div class="spn-container">
                     <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
