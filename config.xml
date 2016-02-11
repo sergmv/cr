@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.climeride"
+<widget id="com.phonegap.claimride"
         version="0.0.2"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
@@ -8,12 +8,12 @@
         versionCode = "100">
   <preference name='phonegap-version' value='cli-5.4.1' />
 
-  <name>ClimeRide</name>
+  <name>Claim Ride</name>
   <description>
-    Clime Ride demo app
+    Claim Ride demo app
   </description>
   <author email="sergmedin@gmail.com" href="http://cordova.io">
-    Clime Ride Team
+    Claim Ride Team
   </author>
   <content src="index.html" />
 
