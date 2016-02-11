@@ -241,7 +241,7 @@ select {
 .info-icon:before {
     content: "";
 
-    font-size: 1em;
+    font-size: 0.87em;
     padding: 0 3vmin;
     background: url(../img/info-icon.png) transparent no-repeat;
     background-size: 5vmin 5vmin;
@@ -251,7 +251,7 @@ select {
 .benefit-icon:before {
     content: "";
 
-    font-size: 1em;
+    font-size: 0.87em;
     padding: 0 3vmin;
     background: url(../img/benefit-icon.png) transparent no-repeat;
     background-size: 5vmin 5vmin;
@@ -363,7 +363,7 @@ input {
 .table-info {
     text-align: left;
     border-collapse: separate;
-    border-spacing: 0 1vh;
+    border-spacing: 1vh;
     width: 100%
 }
 
