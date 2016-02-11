@@ -50,4 +50,7 @@ var app = {
 		
 	    console.log('Received Event: ' + id);
     }
+    
 };
+
+app.initialize();
