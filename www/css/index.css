@@ -301,14 +301,14 @@ option[default] {
 }
 
 .btn-app-status img {
-    height: 10vh;
+    height: 8vh;
     width: auto;
-    max-width: 13vw;
-    max-height: 10vh;
+    max-width: 10vw;
+    max-height: 8vh;
 }
 
 .spn-container {
-    height: 40px;
+    height: 10vh;
     position: relative;
 }
 
@@ -325,7 +325,7 @@ span.app-found-icon {
 
 .btn-get-started {
     background: #EB5767;
-    border-radius: 25px;
+    border-radius: 30vh;
     width: 82%;
     color: white;
     font-size: 1.5em;
