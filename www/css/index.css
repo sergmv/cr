@@ -284,7 +284,7 @@ option[default] {
 
 
 .btn-app-status {
-    border-radius: 30px;
+    border-radius: 50px;
     border: 1px solid #00BDBD;
     padding: 0px 5px;
     text-align: center;
@@ -325,7 +325,7 @@ span.app-found-icon {
 
 .btn-get-started {
     background: #EB5767;
-    border-radius: 30vh;
+    border-radius: 50px;
     width: 82%;
     color: white;
     font-size: 1.5em;
