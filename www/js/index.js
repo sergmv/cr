@@ -18,21 +18,24 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
+        alert("initialize");
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
+        alert("bindEvents");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
+        alert("onDeviceReady");
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -45,28 +48,6 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 		
-		var scheme;
-
-		// Don't forget to add the cordova-plugin-device plugin for `device.platform`
-		if(device.platform === 'iOS') {
-			scheme = 'twitter://';
-		}
-		else if(device.platform === 'Android') {
-			scheme = 'com.twitter.android';
-		}
-
-		appAvailability.check(
-			scheme,       // URI Scheme or Package Name
-			function() {  // Success callback
-				console.log(scheme + ' is available :)');
-				alert(scheme + ' is available :)');
-			},
-			function() {  // Error callback
-				console.log(scheme + ' is not available :(');
-				alert(scheme + ' is not available :(');
-			}
-		);
-
-        console.log('Received Event: ' + id);
+	    console.log('Received Event: ' + id);
     }
 };
