@@ -324,7 +324,7 @@ span.app-found-icon {
 
 .btn-get-started {
     background: #EB5767;
-    border-radius: 20vh;
+    border-radius: 30vh;
     width: 82%;
     color: white;
     font-size: 1.5em;
@@ -361,7 +361,7 @@ input {
 
 
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
     .btn-app-status {
         font-size: 1em;
         padding: 1vh;
@@ -376,4 +376,4 @@ input {
         height: 14vh;
         
     }
-}
+}*/
