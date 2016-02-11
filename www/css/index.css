@@ -241,9 +241,9 @@ select {
     content: "";
 
     font-size: 1em;
-    padding: 7px 25px;
+    padding: 0 3vmin;
     background: url(../img/info-icon.png) transparent no-repeat;
-    background-size: 35px 35px;
+    background-size: 5vmin 5vmin;
     pointer-events: none;
 }
 
@@ -251,9 +251,9 @@ select {
     content: "";
 
     font-size: 1em;
-    padding: 7px 25px;
+    padding: 0 3vmin;
     background: url(../img/benefit-icon.png) transparent no-repeat;
-    background-size: 35px 35px;
+    background-size: 5vmin 5vmin;
     pointer-events: none;
 }
 
@@ -279,14 +279,13 @@ option[default] {
 
     .app-status-container > div {
         width: 45%;
-        height: 20vh;
+        height: 15vh;
     }
 
 
 .btn-app-status {
-    border-radius: 30px;
+    border-radius: 30vh;
     border: 1px solid #00BDBD;
-    padding: 0px 5px;
     text-align: center;
     font-weight: 500;
 }
@@ -301,21 +300,21 @@ option[default] {
 }
 
 .btn-app-status img {
-    height: 10vh;
+    height: 7vh;
     width: auto;
     max-width: 13vw;
-    max-height: 10vh;
+    max-height: 7vh;
 }
 
 .spn-container {
-    height: 40px;
+    height: 6vh;
     position: relative;
 }
 
 span.app-found-icon {
     color: #fff;
     margin: 0px;
-    padding: 10px 0 0 30px;
+    padding: 1vmin 0 0 30px;
     background: url(../img/app-found.png) no-repeat;
     background-size: contain;
     display: block;
@@ -325,15 +324,15 @@ span.app-found-icon {
 
 .btn-get-started {
     background: #EB5767;
-    border-radius: 25px;
+    border-radius: 20vh;
     width: 82%;
     color: white;
     font-size: 1.5em;
     text-align: center;
-    padding: 20px;
+    padding: 3vmin;
     font-weight: 500;
     cursor: pointer;
-    margin: 5px auto 20px;
+    margin: 1vh auto 3vh;
 }
 
 
@@ -364,8 +363,8 @@ input {
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
-        height: 8vw;
         font-size: 1em;
+        padding: 1vh;
     }
 
         .btn-app-status img {
@@ -374,6 +373,7 @@ input {
         }
 
     .app-status-container > div {
-        height: 12vh;
+        height: 14vh;
+        
     }
 }
