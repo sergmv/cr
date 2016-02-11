@@ -28,6 +28,7 @@ body {
     background-color: #242A34;
     background-size: 100% auto;
     background-attachment: fixed;
+    background-size: contain;
     background-position: top left;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 4vmin;
@@ -361,7 +362,7 @@ input {
 
 
 
-/*@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .btn-app-status {
         font-size: 1em;
         padding: 1vh;
@@ -376,4 +377,4 @@ input {
         height: 14vh;
         
     }
-}*/
+}
