@@ -360,7 +360,12 @@ input {
 }
 
 
-
+.table-info {
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0 1vh;
+    width: 100%
+}
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
