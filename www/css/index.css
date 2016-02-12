@@ -361,6 +361,11 @@ span.app-found-icon {
     margin: calc(1% + 5px) auto calc(3% + 5px);
 }
 
+.disable-style {
+    background: #808080;
+    color: #c0c0c0;
+}
+
 .request-btn {
     background-image: url('../img/car-icon.png');
     background-repeat: no-repeat;

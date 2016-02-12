@@ -184,6 +184,15 @@ angular.module('climeride.controllers', [])
                 return 'app-status-notinstalled';
             }
         };
+        
+        $scope.disableStyle = function (value) {
+            if (value) {
+                return 'disable-style';
+            } else {
+                return;
+            }
+        };
+        
         //
         //        $scope.updateStatus = function () {
         //            $scope.uberAvailable = !$scope.uberAvailable;
