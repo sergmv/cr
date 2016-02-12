@@ -15,6 +15,10 @@ angular.module('climeride.controllers', [])
         $scope.goToPage = function (pageName) {
             $location.path(pageName);
         };
+
+        $scope.selectApp = function(appName) {
+            alert("You have selected " + appName);
+        };
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         //        alert('welcomeCtrl');

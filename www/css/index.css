@@ -355,6 +355,18 @@ span.app-found-icon {
     margin: calc(1% + 5px) auto calc(3% + 5px);
 }
 
+.request-btn {
+    background-image: url('../img/car-icon.png');
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    background-position: 80%;
+    text-align: left;
+}
+
+.request-btn>span {
+    margin-left: 15%;
+}
+
 
 * {
     -webkit-user-select: none;
