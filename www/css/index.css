@@ -195,7 +195,7 @@ h1 {
         padding: 20px;
     }
 
-    .input-container input[type=number] {
+    .input-container input[type=tel] {
         padding: 0 0 0 20px;
     }
 

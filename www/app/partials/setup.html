@@ -26,9 +26,9 @@
 
             <input type="text" id="claimNumber" name="claimNumber" placeholder="Claim Number">
 
-            <input type="number" id="prInsured" name="prInsured" placeholder="Primary Insured" maxlength="15" title="Primary Insured">
+            <input type="tel" id="prInsured" name="prInsured" placeholder="Primary Insured" maxlength="15" title="Primary Insured">
 
-            <input type="text" id="zipCode" name="zipCode" placeholder="Billing ZipCode" ng-model="pageName" maxlength="5">
+            <input type="tel" id="zipCode" name="zipCode" placeholder="Billing ZipCode" pattern="\d*" maxlength="6" title="Billing ZipCode">
 
             <div class="clearfix"></div>
         </div>
