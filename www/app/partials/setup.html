@@ -56,36 +56,36 @@
                 <div class="btn-app-status" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="uberIsInstalled || installApp('uber')">
                     <div>
                         Install
-                    <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto" />
+                        <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto" />
                     </div>
+                </div>
+                <div class="spn-container">
+                    <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
+                </div>
             </div>
-            <div class="spn-container">
-                <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
-            </div>
+            <div class="clearfix"></div>
         </div>
+        <!---->
+        <!--    -->
+        <!--    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage()">Confirm registration</div>-->
+        <!--    {{uberAvailable}}-->
+        <!--    {{lyftAvailable}}-->
+        <!--    -->
+        <!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
+        <!--    <br />-->
+        <!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
+        <!--    -->
+        <!--    <br/>-->
+        <!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
+
         <div class="clearfix"></div>
-    </div>
-    <!---->
-    <!--    -->
-    <!--    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage()">Confirm registration</div>-->
-    <!--    {{uberAvailable}}-->
-    <!--    {{lyftAvailable}}-->
-    <!--    -->
-    <!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
-    <!--    <br />-->
-    <!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
-    <!--    -->
-    <!--    <br/>-->
-    <!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
+        <div class="btn-get-started" ng-click="goToPage('/welcome')">
+            Get Started
+        </div>
+        <!--    <a href="market://details?id=com.ubercab" rel="external">To Google Play ubercab</a>-->
+        <!--    <a href="http://market.android.com/details?id=me.lyft.android">To Google Play Lyft</a>-->
+        <!--    <a href="http://market.android.com/details?id=me.lyft.android" target="_blank">To Google Play Lyft</a>-->
+        <!--    <a href="http://market.android.com/details?id=me.lyft.android" rel="external">Press here</a>-->
 
-    <div class="clearfix"></div>
-    <div class="btn-get-started" ng-click="goToPage('/welcome')">
-        Get Started
     </div>
-    <!--    <a href="market://details?id=com.ubercab" rel="external">To Google Play ubercab</a>-->
-    <!--    <a href="http://market.android.com/details?id=me.lyft.android">To Google Play Lyft</a>-->
-    <!--    <a href="http://market.android.com/details?id=me.lyft.android" target="_blank">To Google Play Lyft</a>-->
-    <!--    <a href="http://market.android.com/details?id=me.lyft.android" rel="external">Press here</a>-->
-
-</div>
 </div>
