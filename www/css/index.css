@@ -325,7 +325,7 @@ option[default] {
 }
 
 .spn-container {
-    height: calc(6% + 5px);
+    height: calc(30% + 5px);
     position: relative;
 }
 
