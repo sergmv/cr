@@ -54,6 +54,10 @@ angular.module('climeride.controllers', [])
         $scope.appStoreLyftId = '529379082';
 
         $scope.init = function () {
+            
+
+            
+
 
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
@@ -125,6 +129,16 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.init();
+        
+        $scope.onResume = function () {
+            $scope.init();
+        };
+
+        $scope.addEv = function () {
+            document.addEventListener("resume", $scope.onResume, false);
+        };
+
+        $scope.addEv();
 
         $scope.installApp = function (appName) {
 //            alert('Install app run ' + appName + device.platform);
