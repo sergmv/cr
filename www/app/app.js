@@ -13,7 +13,7 @@ angular.module('climeride', ['ngRoute', 'climeride.services', 'climeride.control
             templateUrl: 'app/partials/welcome.html'
         })
         .when('/requestride', {
-            controller: 'requestrideCtrl',
+            controller: 'welcomeCtrl',
             templateUrl: 'app/partials/requestRide.html'
         })
         .otherwise({redirectTo: '/'});
