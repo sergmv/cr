@@ -307,11 +307,12 @@ option[default] {
     text-align: center;
     font-weight: 500;
     height: 7vh;
-    display: flex;
-    justify-content: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 48%;
 }
     .btn-app-status > div {
-        align-self: center;
+        display: inline-block;
     }
 
 .app-status-installed {
