@@ -6,7 +6,7 @@ angular.module('climeride.controllers', [])
         $scope.init = function () {
 
 
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
         };
 
@@ -23,7 +23,7 @@ angular.module('climeride.controllers', [])
                 $scope.init = function() {
                     
                     
-                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 50 + 'px' });
+                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
                     
                 };
         
@@ -51,7 +51,7 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
 
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 50 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
 
             
