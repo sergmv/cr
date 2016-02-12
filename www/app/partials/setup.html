@@ -4,20 +4,20 @@
     </div>
 
     <div id="content-ctr" class="content-container">
-        
+
 
         <div class="input-container">
-<!--            <div style="color: white; position: fixed; top:1px;left: 3%; text-align: left; font-size: 12px">-->
-<!--                <span>logoCtrH </span><span ng-bind="logoCtrH"></span><br/>-->
-<!--                <span>MH </span><span ng-bind="MH"></span><br/>-->
-<!--                <span>physicalScreenWidth </span><span ng-bind="physicalScreenWidth"></span><br/>-->
-<!--                <span>physicalScreenHeight </span><span ng-bind="physicalScreenHeight"></span><br/>-->
-<!--                <span>height </span><span ng-bind="height"></span><br/>-->
-<!--                <span>width </span><span ng-bind="width"></span><br/>-->
-<!--                <span>devicePixelRatio </span><span ng-bind="devicePixelRatio"></span><br/>-->
-<!--            </div>-->
+            <!--            <div style="color: white; position: fixed; top:1px;left: 3%; text-align: left; font-size: 12px">-->
+            <!--                <span>logoCtrH </span><span ng-bind="logoCtrH"></span><br/>-->
+            <!--                <span>MH </span><span ng-bind="MH"></span><br/>-->
+            <!--                <span>physicalScreenWidth </span><span ng-bind="physicalScreenWidth"></span><br/>-->
+            <!--                <span>physicalScreenHeight </span><span ng-bind="physicalScreenHeight"></span><br/>-->
+            <!--                <span>height </span><span ng-bind="height"></span><br/>-->
+            <!--                <span>width </span><span ng-bind="width"></span><br/>-->
+            <!--                <span>devicePixelRatio </span><span ng-bind="devicePixelRatio"></span><br/>-->
+            <!--            </div>-->
             <div class="select-container">
-                <select id="isS" >
+                <select id="isS">
                     <option value="def" default selected>Choose Carrier</option>
                     <option value="1">LINKS INSURANCE SERVICE</option>
                     <option value="2">LINKS INSURANCE SERVICE 2</option>
@@ -43,8 +43,10 @@
 
             <div class="float-left">
                 <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="lyftIsInstalled || installApp('lyft')">
-                    Install
-                    <img src="./../www/img/lyft-logo.png" />
+                    <div>
+                        Install
+                        <img src="./../www/img/lyft-logo.png" />
+                    </div>
                 </div>
                 <div class="spn-container">
                     <span ng-show="lyftIsInstalled" class="app-found-icon">Lyft Found</span>
@@ -52,36 +54,38 @@
             </div>
             <div class="float-right">
                 <div class="btn-app-status" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="uberIsInstalled || installApp('uber')">
-                    Install
-                    <img src="./../www/img/uber-logo.png" />
-                </div>
-                <div class="spn-container">
-                    <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
-                </div>
+                    <div>
+                        Install
+                    <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto" />
+                    </div>
             </div>
-            <div class="clearfix"></div>
+            <div class="spn-container">
+                <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
+            </div>
         </div>
-        <!---->
-        <!--    -->
-        <!--    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage()">Confirm registration</div>-->
-        <!--    {{uberAvailable}}-->
-        <!--    {{lyftAvailable}}-->
-        <!--    -->
-        <!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
-        <!--    <br />-->
-        <!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
-        <!--    -->
-        <!--    <br/>-->
-        <!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
-
         <div class="clearfix"></div>
-        <div class="btn-get-started" ng-click="goToPage('/welcome')">
-            Get Started
-        </div>
-        <!--    <a href="market://details?id=com.ubercab" rel="external">To Google Play ubercab</a>-->
-        <!--    <a href="http://market.android.com/details?id=me.lyft.android">To Google Play Lyft</a>-->
-        <!--    <a href="http://market.android.com/details?id=me.lyft.android" target="_blank">To Google Play Lyft</a>-->
-        <!--    <a href="http://market.android.com/details?id=me.lyft.android" rel="external">Press here</a>-->
-
     </div>
+    <!---->
+    <!--    -->
+    <!--    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage()">Confirm registration</div>-->
+    <!--    {{uberAvailable}}-->
+    <!--    {{lyftAvailable}}-->
+    <!--    -->
+    <!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
+    <!--    <br />-->
+    <!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
+    <!--    -->
+    <!--    <br/>-->
+    <!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
+
+    <div class="clearfix"></div>
+    <div class="btn-get-started" ng-click="goToPage('/welcome')">
+        Get Started
+    </div>
+    <!--    <a href="market://details?id=com.ubercab" rel="external">To Google Play ubercab</a>-->
+    <!--    <a href="http://market.android.com/details?id=me.lyft.android">To Google Play Lyft</a>-->
+    <!--    <a href="http://market.android.com/details?id=me.lyft.android" target="_blank">To Google Play Lyft</a>-->
+    <!--    <a href="http://market.android.com/details?id=me.lyft.android" rel="external">Press here</a>-->
+
+</div>
 </div>

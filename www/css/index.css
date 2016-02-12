@@ -286,7 +286,7 @@ option[default] {
 }
 
 .app-status-container {
-    width: 90%;
+    width: 96%;
     margin: 0 auto;
 }
 
@@ -296,7 +296,7 @@ option[default] {
     }
 
     .app-status-container > div {
-        width: 45%;
+        width: 48%;
         height: 15vh;
     }
 
@@ -306,7 +306,13 @@ option[default] {
     border: 1px solid #00BDBD;
     text-align: center;
     font-weight: 500;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
 }
+    .btn-app-status > div {
+        align-self: center;
+    }
 
 .app-status-installed {
     color: #92959A;
@@ -320,7 +326,6 @@ option[default] {
 .btn-app-status img {
     height: 7vh;
     width: auto;
-    max-width: 13vw;
     max-height: 7vh;
 }
 
@@ -416,7 +421,7 @@ input {
 
         .btn-app-status img {
             
-            max-width: 40%;
+            /*max-width: 40%;*/
         }
 
     .app-status-container > div {
