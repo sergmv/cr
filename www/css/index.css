@@ -160,7 +160,9 @@ h1 {
         display: inline-block;
     }
 
-
+.content-container {
+    height: 60%;
+}
 
 
 
@@ -285,7 +287,7 @@ option[default] {
 
 
 .btn-app-status {
-    border-radius: 30vh;
+    border-radius: 50px;
     border: 1px solid #00BDBD;
     text-align: center;
     font-weight: 500;
@@ -308,14 +310,14 @@ option[default] {
 }
 
 .spn-container {
-    height: 6vh;
+    height: calc(6% + 5px);
     position: relative;
 }
 
 span.app-found-icon {
     color: #fff;
     margin: 0px;
-    padding: 1vmin 0 0 30px;
+    padding: calc(1% + 5px) 0 0 30px;
     background: url(../img/app-found.png) no-repeat;
     background-size: contain;
     display: block;
@@ -325,15 +327,15 @@ span.app-found-icon {
 
 .btn-get-started {
     background: #EB5767;
-    border-radius: 30vh;
+    border-radius: 50px;
     width: 82%;
     color: white;
     font-size: 1.5em;
     text-align: center;
-    padding: 3vmin;
+    padding: calc(3% + 5px);
     font-weight: 500;
     cursor: pointer;
-    margin: 1vh auto 3vh;
+    margin: calc(1% + 5px) auto calc(3% + 5px);
 }
 
 
@@ -357,25 +359,35 @@ input {
     width: 100%;
     background-color: gray;
     height: 1px;
+    margin: 3% 0 3% 0;
 }
 
 
 .table-info {
     text-align: left;
-    border-collapse: separate;
-    border-spacing: 1vh;
-    width: 100%
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.row-info {
+    margin-top: 5%;
+}
+
+.row-info > span:first-of-type{
+    min-width: 40%;
+    color: #00BDBD;
+    display: inline-block;
 }
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
         font-size: 1em;
-        padding: 1vh;
+        padding: calc(1% + 2px);
     }
 
         .btn-app-status img {
-            height: 8vw;
-            max-width: 12vw;
+            
+            max-width: 40%;
         }
 
     .app-status-container > div {
