@@ -27,11 +27,12 @@ body {
     background: url(../img/background.png) no-repeat center top;
     background-color: #242A34;
     background-size: 100% auto;
-    background-attachment: fixed;
-    background-size: contain;
+    /*background-attachment: fixed;
+    background-size: contain;*/
     background-position: top left;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 4vmin;
+    font-size: 16pt;
+    font-size: 4vw;
     height: 100%;
     margin: 0px;
     padding: 0px;
