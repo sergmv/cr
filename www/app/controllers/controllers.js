@@ -3,14 +3,14 @@ angular.module('climeride.controllers', [])
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
-        $scope.init = function () {
-
-
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
-
-        };
-
-        $scope.init();
+//        $scope.init = function () {
+//
+//
+//            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
+//
+//        };
+//
+//        $scope.init();
         //        
         $scope.goToPage = function (pageName) {
             $location.path(pageName);
