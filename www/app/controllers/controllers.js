@@ -1,4 +1,21 @@
 angular.module('climeride.controllers', [])
+    .controller('requestrideCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+        //        alert('welcomeCtrl');
+        //        $scope.greeting = "dsds";
+        //
+        $scope.init = function () {
+
+
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
+
+        };
+
+        $scope.init();
+        //        
+        $scope.goToPage = function (pageName) {
+            $location.path(pageName);
+        };
+    }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
@@ -6,7 +23,7 @@ angular.module('climeride.controllers', [])
                 $scope.init = function() {
                     
                     
-                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
+                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
                     
                 };
         
@@ -34,7 +51,7 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
 
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 30 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 40 + 'px' });
 
 
             
