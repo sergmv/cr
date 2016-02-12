@@ -185,10 +185,18 @@ h1 {
         font-size: 1em;
         display: block;
         margin: 10px auto;
-        padding: 20px;
+        
         color: white;
         box-sizing: border-box;
         height: 10vw;
+    }
+
+    .input-container input[type=text] {
+        padding: 20px;
+    }
+
+    .input-container input[type=number] {
+        padding: 0 0 0 20px;
     }
 
 .select-container select {
