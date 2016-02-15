@@ -30,12 +30,13 @@ angular.module('climeride.controllers', [])
             } else {
                 $scope.selectedAppId = commonService.getUberId();
             }
-            
-            window.plugins.launcher.launch($scope.selectedAppId, successCallback, errorCallback);
+            alert($scope.selectedAppId);
+            window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
         };
 
         $scope.runApp = function () {
-            window.plugins.launcher.launch($scope.selectedAppId, successCallback, errorCallback);
+            alert($scope.selectedAppId);
+            window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
         };
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
