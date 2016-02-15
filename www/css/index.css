@@ -376,6 +376,28 @@ span.app-found-icon {
         margin-left: 15%;
     }
 
+.back-buton {
+    position: absolute;
+    z-index: 9000;
+    top: 4%;
+    left: 2%;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    background-image: url('../img/select-img.png');
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-size: 25px 20px;
+    background-color: #EB5767;
+    background-position: 5px 10px;
+}
+
 
 * {
     -webkit-user-select: none;
@@ -422,9 +444,9 @@ input {
             display: inline-block;
         }
 
-        .benefit-section > div > span:nth-child(2) {
-            text-align: right;
-        }
+.benefit-section > div > span:nth-child(2) {
+    text-align: right;
+}
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
