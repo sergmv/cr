@@ -23,15 +23,19 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.selectApp = function (appName) {
-            var selectedAppId = {};
+            $scope.selectedAppId = {};
 
             if (appName == 'lyft') {
-                selectedAppId  = commonService.getLyftId($scope.storeLyftId);
+                $scope.selectedAppId = commonService.getLyftId();
             } else {
-                selectedAppId = commonService.getUberId($scope.storeLyftId);
+                $scope.selectedAppId = commonService.getUberId();
             }
             
-            window.plugins.launcher.launch(selectedAppId, successCallback, errorCallback);
+            window.plugins.launcher.launch($scope.selectedAppId, successCallback, errorCallback);
+        };
+
+        $scope.runApp = function () {
+            window.plugins.launcher.launch($scope.selectedAppId, successCallback, errorCallback);
         };
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
