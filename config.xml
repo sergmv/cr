@@ -176,8 +176,15 @@
   <icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
 
 <!--   Define app splash screen for each platform. -->
-<!--  <gap:splash src="splash.png"/>-->
-<!--  <gap:splash src="default.png" gap:platform="ios" width="1242" height="2208" />-->
+  <gap:splash src="resources/ios/splash/Default~iphone.png"             gap:platform="ios" width="320" height="480"/>
+  <gap:splash src="resources/ios/splash/Default@2x~iphone.png"          gap:platform="ios" width="640" height="960"/>
+  <gap:splash src="resources/ios/splash/Default-568h@2x~iphone.png"     gap:platform="ios" width="640" height="1136"/>
+  <gap:splash src="resources/ios/splash/Default-667h.png"               gap:platform="ios" width="750" height="1334"/>
+  <gap:splash src="resources/ios/splash/Default-Portrait~ipad.png"      gap:platform="ios" width="768" height="1024"/>
+  <gap:splash src="resources/ios/splash/Default-736h.png"               gap:platform="ios" width="1242" height="2208"/>
+  <gap:splash src="resources/ios/splash/Default-Portrait@2x~ipad.png"   gap:platform="ios" width="1536" height="2048"/>
+
+
 
 
   <access origin="*" />
