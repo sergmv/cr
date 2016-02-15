@@ -24,12 +24,6 @@ angular.module('climeride.controllers', [])
             } else {
                 $scope.selectedAppId = commonService.getUberId();
             }
-            alert($scope.selectedAppId);
-            window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
-        };
-
-        $scope.runApp = function () {
-            alert($scope.test);
             window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
         };
     }])
