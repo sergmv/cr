@@ -54,8 +54,8 @@ angular.module('climeride.controllers', [])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
         //alert('setupCtrl');
 
-        $scope.uberIsInstalled = true;
-        $scope.lyftIsInstalled = true;
+//        $scope.uberIsInstalled = true;
+//        $scope.lyftIsInstalled = true;
 
 
         $scope.iOSUber = 'uber:';
@@ -112,8 +112,8 @@ angular.module('climeride.controllers', [])
                 $scope.storeLyftId = $scope.androidLyft;
             }
             
-            commonService.setUberId($scope.storeUberId);
-            commonService.setLyftId($scope.storeLyftId);
+            commonService.setUberId(schemeUber);
+            commonService.setLyftId(schemeLyft);
 
             appAvailability.check(
                 schemeUber,       // URI Scheme or Package Name
