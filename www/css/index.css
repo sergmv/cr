@@ -21,7 +21,7 @@
 }
 
 body, html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
@@ -187,19 +187,18 @@ h1 {
         font-size: 1em;
         display: block;
         margin: 10px auto;
-        
         color: white;
         box-sizing: border-box;
         height: 10vw;
     }
 
-    .input-container input[type=text] {
-        padding: 20px;
-    }
+        .input-container input[type=text] {
+            padding: 20px;
+        }
 
-    .input-container input[type=tel] {
-        padding: 0 0 0 20px;
-    }
+        .input-container input[type=tel] {
+            padding: 0 0 0 20px;
+        }
 
 .select-container select {
     border: 0px;
@@ -257,7 +256,6 @@ select {
 
 .info-icon:before {
     content: "";
-
     font-size: 0.87em;
     padding: 0 3vmin;
     background: url(../img/info-icon.png) transparent no-repeat;
@@ -267,7 +265,6 @@ select {
 
 .benefit-icon:before {
     content: "";
-
     font-size: 0.87em;
     padding: 0 3vmin;
     background: url(../img/benefit-icon.png) transparent no-repeat;
@@ -311,6 +308,7 @@ option[default] {
     vertical-align: middle;
     width: 48%;
 }
+
     .btn-app-status > div {
         display: inline-block;
     }
@@ -374,9 +372,9 @@ span.app-found-icon {
     text-align: left;
 }
 
-.request-btn>span {
-    margin-left: 15%;
-}
+    .request-btn > span {
+        margin-left: 15%;
+    }
 
 
 * {
@@ -409,15 +407,24 @@ input {
     margin-bottom: 5%;
 }
 
-.row-info {
-    margin-top: 5%;
-}
+    .table-info > div {
+        margin-top: 5%;
+    }
 
-.row-info > span:first-of-type{
-    min-width: 40%;
-    color: #00BDBD;
-    display: inline-block;
-}
+        .table-info > div > span:first-of-type {
+            min-width: 40%;
+            color: #00BDBD;
+            display: inline-block;
+        }
+
+        .table-info > div > span:nth-child(2) {
+            min-width: 20%;
+            display: inline-block;
+        }
+
+        .benefit-section > div > span:nth-child(2) {
+            text-align: right;
+        }
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
@@ -426,12 +433,10 @@ input {
     }
 
         .btn-app-status img {
-            
             /*max-width: 40%;*/
         }
 
     .app-status-container > div {
         height: 14vh;
-        
     }
 }

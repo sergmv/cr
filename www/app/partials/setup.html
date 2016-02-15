@@ -39,44 +39,29 @@
         <div class="gray-line"></div>
 
         <div class="app-status-container">
-            <p>Install Ride Share Application</p>
+            <p ng-bind="messages.installApp" ng-show="!(lyftIsInstalled && uberIsInstalled)">Install Ride Share Application</p>
+            <p ng-bind="messages.provideBy" ng-show="lyftIsInstalled && uberIsInstalled">Install Ride Share Application</p>
 
             <div class="float-left">
                 <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="lyftIsInstalled || installApp('lyft')">
                     <div>
-                        Install
+                        <span ng-show="!lyftIsInstalled">Install</span>
                         <img src="./../www/img/lyft-logo.png" />
+                        <span ng-show="lyftIsInstalled">Found</span>
                     </div>
-                </div>
-                <div class="spn-container">
-                    <span ng-show="lyftIsInstalled" class="app-found-icon">Lyft Found</span>
                 </div>
             </div>
             <div class="float-right">
                 <div class="btn-app-status" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="uberIsInstalled || installApp('uber')">
                     <div>
-                        Install
+                        <span ng-show="!uberIsInstalled">Install</span>
                         <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto" />
+                        <span ng-show="uberIsInstalled">Found</span>
                     </div>
-                </div>
-                <div class="spn-container">
-                    <span ng-show="uberIsInstalled" class="app-found-icon">Uber Found</span>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
-        <!---->
-        <!--    -->
-        <!--    <div class="btn btn-success two-line-btn float-right" ng-click="goToPage()">Confirm registration</div>-->
-        <!--    {{uberAvailable}}-->
-        <!--    {{lyftAvailable}}-->
-        <!--    -->
-        <!--    <div class="btn btn-warning" ng-click="init()">Init</div>-->
-        <!--    <br />-->
-        <!--    <div class="btn btn-danger" ng-click="updateStatus()">UpdateStatus</div>-->
-        <!--    -->
-        <!--    <br/>-->
-        <!--    <div class="btn btn-success two-line-btn" ng-click="goToPage('/benefit')">Benefit</div>-->
 
         <div class="clearfix"></div>
         <div class="btn-get-started" ng-class="disableStyle(!(uberIsInstalled && lyftIsInstalled))" ng-click="!(uberIsInstalled && lyftIsInstalled) || goToPage('/welcome')">

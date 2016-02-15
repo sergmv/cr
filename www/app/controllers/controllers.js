@@ -53,6 +53,11 @@ angular.module('climeride.controllers', [])
         $scope.appStoreUberId = '368677368';
         $scope.appStoreLyftId = '529379082';
 
+        $scope.messages = {};
+
+        $scope.messages.installApp = "Install ride share application";
+        $scope.messages.provideBy = "Ride share provided by";
+
         $scope.init = function () {
             
 
