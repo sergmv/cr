@@ -1,5 +1,5 @@
 angular.module('climeride.controllers', [])
-    .controller('requestrideCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+    .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
@@ -19,12 +19,19 @@ angular.module('climeride.controllers', [])
         var successCallback = function() {
         };
         var errorCallback = function () {
-            alert('Errors');
+//            alert('Errors');
         };
 
         $scope.selectApp = function (appName) {
-            window.plugins.launcher.launch({ uri: 'fb://profile' }, successCallback, errorCallback);
-            alert("You have selected " + appName);
+            var selectedAppId = {};
+
+            if (appName == 'lyft') {
+                selectedAppId  = commonService.getLyftId($scope.storeLyftId);
+            } else {
+                selectedAppId = commonService.getUberId($scope.storeLyftId);
+            }
+            
+            window.plugins.launcher.launch(selectedAppId, successCallback, errorCallback);
         };
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
@@ -44,11 +51,11 @@ angular.module('climeride.controllers', [])
                     $location.path(pageName);
                 };
     }])
-    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', function ($scope, $http, $location, $route) {
+    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
         //alert('setupCtrl');
 
-//        $scope.uberIsInstalled = false;
-//        $scope.lyftIsInstalled = true;
+        $scope.uberIsInstalled = true;
+        $scope.lyftIsInstalled = true;
 
 
         $scope.iOSUber = 'uber:';
@@ -66,15 +73,9 @@ angular.module('climeride.controllers', [])
         $scope.messages.provideBy = "Ride share provided by";
 
         $scope.init = function () {
-            
-
-            
 
 
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
-
-
-            
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
             $scope.MH = $('#content-ctr').height();
@@ -85,6 +86,7 @@ angular.module('climeride.controllers', [])
             $scope.height = window.screen.height;
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
+
             
             if (typeof device == "undefined") {
                 return;
@@ -108,8 +110,10 @@ angular.module('climeride.controllers', [])
                 
                 $scope.storeUberId = $scope.androidUber;
                 $scope.storeLyftId = $scope.androidLyft;
-
             }
+            
+            commonService.setUberId($scope.storeUberId);
+            commonService.setLyftId($scope.storeLyftId);
 
             appAvailability.check(
                 schemeUber,       // URI Scheme or Package Name
@@ -163,7 +167,7 @@ angular.module('climeride.controllers', [])
                     appStoreId = $scope.storeLyftId;
                 }
             }
-            
+
             if (device.platform == "iOS") {
                 window.open("itms-apps://itunes.apple.com/app/id" + appStoreId);
             } else {

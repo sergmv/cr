@@ -17,4 +17,27 @@ angular.module('climeride.services', [])
                 return impl.apply(this, arguments);
             };
         };
+    }]).service('commonService', [function () {
+
+        var appConfig = {};
+
+        var commonService = {};
+
+        commonService.setUberId = function (value) {
+            appConfig.uberId = value;
+        };
+        
+        commonService.setLyftId = function (value) {
+            appConfig.lyftId = value;
+        };
+
+        commonService.getUberId = function () {
+            return $scope.uberId;
+        };
+        
+        commonService.getLyftId = function () {
+            return $scope.lyftId;
+        };
+
+        return commonService;
     }]);
