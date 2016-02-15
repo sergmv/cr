@@ -16,7 +16,8 @@ angular.module('climeride.controllers', [])
             $location.path(pageName);
         };
 
-        $scope.selectApp = function(appName) {
+        $scope.selectApp = function (appName) {
+            window.plugins.launcher.launch({ uri: 'fb://profile' }, successCallback, errorCallback);
             alert("You have selected " + appName);
         };
     }])
