@@ -1,7 +1,7 @@
 angular.module('climeride.controllers', [])
     .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
         $scope.init = function () {
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 30 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
         };
 
         $scope.init();
@@ -34,7 +34,7 @@ angular.module('climeride.controllers', [])
                 $scope.init = function() {
                     
                     
-                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 30 + 'px' });
+                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
                     
                 };
         
@@ -47,8 +47,8 @@ angular.module('climeride.controllers', [])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
         //alert('setupCtrl');
 
-//        $scope.uberIsInstalled = true;
-//        $scope.lyftIsInstalled = true;
+        $scope.uberIsInstalled = true;
+        $scope.lyftIsInstalled = true;
 
 
         $scope.iOSUber = 'uber:';
@@ -71,7 +71,7 @@ angular.module('climeride.controllers', [])
             commonService.setUberId($scope.iOSUber);
             commonService.setLyftId($scope.iOSLyft);
             
-            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 30 + 'px' });
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
             $scope.MH = $('#content-ctr').height();
