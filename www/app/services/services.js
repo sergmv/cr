@@ -32,11 +32,11 @@ angular.module('climeride.services', [])
         };
 
         commonService.getUberId = function () {
-            return $scope.uberId;
+            return appConfig.uberId;
         };
         
         commonService.getLyftId = function () {
-            return $scope.lyftId;
+            return appConfig.lyftId;
         };
 
         return commonService;

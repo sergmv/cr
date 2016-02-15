@@ -1,13 +1,7 @@
 angular.module('climeride.controllers', [])
     .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
-        //        alert('welcomeCtrl');
-        //        $scope.greeting = "dsds";
-        //
         $scope.init = function () {
-
-
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
-
         };
 
         $scope.init();
@@ -35,7 +29,7 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.runApp = function () {
-            alert($scope.selectedAppId);
+            alert($scope.test);
             window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
         };
     }])
@@ -77,9 +71,12 @@ angular.module('climeride.controllers', [])
         $scope.messages.installApp = "Install ride share application";
         $scope.messages.provideBy = "Ride share provided by";
 
+
         $scope.init = function () {
 
-
+            commonService.setUberId($scope.iOSUber);
+            commonService.setLyftId($scope.iOSLyft);
+            
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
