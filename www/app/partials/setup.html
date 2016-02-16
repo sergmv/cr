@@ -23,10 +23,12 @@
                     <option value="2">LINKS INSURANCE SERVICE 2</option>
                 </select>
             </div>
-
-            <input type="text" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" pattern="\d*" maxlength="15" ng-model="claimNumber" ng-blur="validateFields()">
-            <div ng-if="!claimNumberValid" style="width: 32%; display: inline-block; background-color: #EB5767; margin: 10px auto; margin-left: 0px; line-height: 10vw;">Invalid number</div>
-            <div class="clearfix"></div>
+            <div>
+                <input type="tel" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" pattern="\d*" maxlength="15" ng-model="claimNumber" ng-blur="validateFields()">
+                <div ng-if="!claimNumberValid" style="width: 32%; display: block; background-color: #EB5767; color: white; margin: 10px auto; margin-left: 0px; height: 10vw; float: right">
+                    <span style="padding-top: 3vw; display: table; margin: 0 auto;">Invalid number</span>
+                </div>
+            </div>
 
             <input type="text" id="prInsured" name="prInsured" placeholder="Policy Holder" title="Policy Holder">
 
@@ -66,7 +68,7 @@
         </div>
 
         <div class="clearfix"></div>
-        <div class="btn-get-started" ng-class="disableStyle(!(uberIsInstalled && lyftIsInstalled))" ng-click="!(uberIsInstalled && lyftIsInstalled) || goToPage('/welcome')">
+        <div class="btn-get-started" ng-class="disableStyle(!(uberIsInstalled && lyftIsInstalled && claimNumberValid && claimNumber.length>0))" ng-click="!(uberIsInstalled && lyftIsInstalled && claimNumberValid && claimNumber.length>0) || goToPage('/welcome')">
             Get Started
         </div>
         <!--    <a href="market://details?id=com.ubercab" rel="external">To Google Play ubercab</a>-->

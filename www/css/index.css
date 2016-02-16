@@ -178,6 +178,10 @@ h1 {
     border: 5px solid #eb5767 !important;
 }
 
+input:focus:invalid {
+     color: #ffffff !important; 
+}
+
 
 
 .input-container {
