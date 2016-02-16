@@ -89,15 +89,27 @@ angular.module('climeride.controllers', [])
         $scope.claimNumberValid = true;
 
         $scope.claimNumber = "";
+        $scope.zipCode = "";
+
+        $scope.zipValid = true;
         
         var numberRegExp = /^-?[0-9]+$/;
         
-        $scope.validateFields = function () {
+        $scope.validateClaimNumberFields = function () {
             
-            if ($scope.claimNumber.length == 15 && numberRegExp.test($scope.claimNumber)) {
+            if ($scope.claimNumber.length == 15 && numberRegExp.test($scope.claimNumber) && $scope.claimNumber == "789789789789789") {
                 $scope.claimNumberValid = true;
             } else {
                 $scope.claimNumberValid = false;
+            }
+        };
+        
+        $scope.validateZip = function () {
+
+            if ($scope.zipCode.length == 6 && numberRegExp.test($scope.zipCode) && $scope.zipCode == "123456") {
+                $scope.zipValid = true;
+            } else {
+                $scope.zipValid = false;
             }
         };
 
