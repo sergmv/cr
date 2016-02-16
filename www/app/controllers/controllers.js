@@ -34,19 +34,6 @@ angular.module('climeride.controllers', [])
         $scope.selectApp = function (appName) {
             $scope.selectedAppName = appName;
 
-            function onPrompt(results) {
-                alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
-            }
-
-            navigator.notification.prompt(
-                'Please enter your name',  // message
-                onPrompt,                  // callback to invoke
-                'Registration',            // title
-                ['Ok', 'Exit'],             // buttonLabels
-                'Jane Doe'                 // defaultText
-            );
-
-
             navigator.notification.confirm(
             'You have selected ' + $scope.selectedAppNam.toUpperCase(), // message
              onConfirm,            // callback to invoke with index of button pressed
