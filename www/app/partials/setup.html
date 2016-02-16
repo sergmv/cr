@@ -24,7 +24,7 @@
                 </select>
             </div>
 
-            <input type="tel" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" pattern="\d*" maxlength="15" ng-model="claimNumber" ng-blur="validateFields()">
+            <input type="text" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" pattern="\d*" maxlength="15" ng-model="claimNumber" ng-blur="validateFields()">
             <div ng-if="!claimNumberValid" style="width: 32%; display: inline-block; background-color: #EB5767; margin: 10px auto; margin-left: 0px; line-height: 10vw;">Invalid number</div>
             <div class="clearfix"></div>
 
