@@ -171,6 +171,13 @@ h1 {
     width: 100%;
 }
 
+.invalidValue {
+    float: left !important;
+    width: 68% !important;
+    background-color: #A64B59 !important;
+    border: 5px solid #eb5767 !important;
+}
+
 
 
 .input-container {

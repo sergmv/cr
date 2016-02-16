@@ -69,6 +69,8 @@ angular.module('climeride.controllers', [])
         $scope.uberIsInstalled = true;
         $scope.lyftIsInstalled = true;
 
+        $scope.claimNumberValid = true;
+
 
         $scope.iOSUber = 'uber:';
         $scope.iOSLyft = 'lyft:';
@@ -83,6 +85,21 @@ angular.module('climeride.controllers', [])
 
         $scope.messages.installApp = "Install ride share application";
         $scope.messages.provideBy = "Ride share provided by";
+        
+        $scope.claimNumberValid = true;
+
+        $scope.claimNumber = "";
+        
+        var numberRegExp = /^-?[0-9]+$/;
+        
+        $scope.validateFields = function () {
+            
+            if ($scope.claimNumber.length == 15 && numberRegExp.test($scope.claimNumber)) {
+                $scope.claimNumberValid = true;
+            } else {
+                $scope.claimNumberValid = false;
+            }
+        };
 
 
         $scope.init = function () {
