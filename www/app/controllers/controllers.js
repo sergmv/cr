@@ -123,6 +123,8 @@ angular.module('climeride.controllers', [])
                 );
 
             };
+
+            $scope.selectApp();
             
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
