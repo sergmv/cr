@@ -35,7 +35,7 @@ angular.module('climeride.controllers', [])
             $scope.selectedAppName = appName;
 
             navigator.notification.confirm(
-                'You have selected ' + $scope.selectedAppNam, // message
+                'You have selected ' + $scope.selectedAppName, // message
                  onConfirm,            // callback to invoke with index of button pressed
                 'Run application',           // title
                 ['Run', 'Cancel']     // buttonLabels
