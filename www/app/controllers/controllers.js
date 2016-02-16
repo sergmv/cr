@@ -16,17 +16,15 @@ angular.module('climeride.controllers', [])
             //            alert('Errors');
         };
 
-        var onConfirm = function (buttonIndex) {
-            if (buttonIndex == 1) {
-                var selectedAppId = {};
+        var onConfirm = function () {
+            var selectedAppId = {};
 
-                if (appName == 'lyft') {
-                    selectedAppId = commonService.getLyftId();
-                } else {
-                    selectedAppId = commonService.getUberId();
-                }
-                window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
+            if ($scope.selectedAppName == 'lyft') {
+                selectedAppId = commonService.getLyftId();
+            } else {
+                selectedAppId = commonService.getUberId();
             }
+            window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
         };
 
         $scope.selectedAppName = {};
@@ -97,34 +95,7 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
-            var onConfirm = function (buttonIndex) {
-                if (buttonIndex == 1) {
-                    var selectedAppId = {};
-
-                    if (appName == 'lyft') {
-                        selectedAppId = commonService.getLyftId();
-                    } else {
-                        selectedAppId = commonService.getUberId();
-                    }
-                    window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
-                }
-            };
-
-            $scope.selectedAppName = {};
-
-            $scope.selectApp = function (appName) {
-                $scope.selectedAppName = appName;
-
-                navigator.notification.confirm(
-                    'You have selected ' + $scope.selectedAppNam.toUpperCase(), // message
-                     onConfirm,            // callback to invoke with index of button pressed
-                    'Run application',           // title
-                    ['Run', 'Cancel']     // buttonLabels
-                );
-
-            };
-
-
+            
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
