@@ -16,16 +16,59 @@ angular.module('climeride.controllers', [])
 //            alert('Errors');
         };
 
-        $scope.selectApp = function (appName) {
-            $scope.selectedAppId = {};
+        var onConfirm = function(buttonIndex) {
+            if (buttonIndex == 1) {
+                var selectedAppId = {};
 
-            if (appName == 'lyft') {
-                $scope.selectedAppId = commonService.getLyftId();
-            } else {
-                $scope.selectedAppId = commonService.getUberId();
+                if (appName == 'lyft') {
+                    selectedAppId = commonService.getLyftId();
+                } else {
+                    selectedAppId = commonService.getUberId();
+                }
+                window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
             }
-            window.plugins.launcher.launch({ uri: $scope.selectedAppId }, successCallback, errorCallback);
         };
+
+        $scope.selectedAppName = {};
+
+        $scope.selectApp = function (appName) {
+            $scope.selectedAppName = appName;
+
+            function onPrompt(results) {
+                alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+            }
+
+            navigator.notification.prompt(
+                'Please enter your name',  // message
+                onPrompt,                  // callback to invoke
+                'Registration',            // title
+                ['Ok', 'Exit'],             // buttonLabels
+                'Jane Doe'                 // defaultText
+            );
+
+
+            navigator.notification.confirm(
+            'You have selected ' + $scope.selectedAppNam.toUpperCase(), // message
+             onConfirm,            // callback to invoke with index of button pressed
+            'Run application',           // title
+            ['Run', 'Cancel']     // buttonLabels
+        );
+            
+        };
+        
+//        function alertDismissed() {
+//            alert("alertDismissed");
+//        }
+//
+//        navigator.notification.alert(
+//            'You are the winner!',  // message
+//            alertDismissed,         // callback
+//            'Game Over',            // title
+//            'Done'                  // buttonName
+//        );
+
+
+        
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         //        alert('welcomeCtrl');
@@ -67,21 +110,7 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
-            
-            function alertDismissed() {
-                alert("alertDismissed");
-            }
-
-            navigator.notification.alert(
-                'You are the winner!',  // message
-                alertDismissed,         // callback
-                'Game Over',            // title
-                'Done'                  // buttonName
-            );
-
-            commonService.setUberId($scope.iOSUber);
-            commonService.setLyftId($scope.iOSLyft);
-            
+       
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
