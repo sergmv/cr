@@ -67,6 +67,17 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
+            
+            function alertDismissed() {
+                alert("alertDismissed");
+            }
+
+            navigator.notification.alert(
+                'You are the winner!',  // message
+                alertDismissed,         // callback
+                'Game Over',            // title
+                'Done'                  // buttonName
+            );
 
             commonService.setUberId($scope.iOSUber);
             commonService.setLyftId($scope.iOSLyft);

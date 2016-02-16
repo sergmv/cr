@@ -76,6 +76,8 @@
   <plugin name="com.fantasyskiracer.inappbrowser" spec="1.0.4" source="pgb" />
   <plugin name="org.apache.cordova.battery-status" spec="0.2.12" source="pgb" />
   <gap:plugin name="com.hutchind.cordova.plugins.launcher" />
+  <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
+  
 
   <!-- for iOS -->
   <feature name="Launcher">
