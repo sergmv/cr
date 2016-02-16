@@ -16,15 +16,17 @@ angular.module('climeride.controllers', [])
             //            alert('Errors');
         };
 
-        var onConfirm = function () {
-            var selectedAppId = {};
+        var onConfirm = function (buttonIndex) {
+            if (buttonIndex == 1) {
+                var selectedAppId = {};
 
-            if ($scope.selectedAppName == 'Lyft') {
-                selectedAppId = commonService.getLyftId();
-            } else {
-                selectedAppId = commonService.getUberId();
+                if ($scope.selectedAppName == 'Lyft') {
+                    selectedAppId = commonService.getLyftId();
+                } else {
+                    selectedAppId = commonService.getUberId();
+                }
+                window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
             }
-            window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
         };
 
         $scope.selectedAppName = {};
@@ -32,25 +34,14 @@ angular.module('climeride.controllers', [])
         $scope.selectApp = function (appName) {
             $scope.selectedAppName = appName;
 
-            navigator.notification.alert(
-                    'You have selected ' + $scope.selectedAppName,  // message
-                    onConfirm,         // callback
-                    'Run application',            // title
-                    'Run'                  // buttonName
-                );
+            navigator.notification.confirm(
+                'You have selected ' + $scope.selectedAppNam, // message
+                 onConfirm,            // callback to invoke with index of button pressed
+                'Run application',           // title
+                ['Run', 'Cancel']     // buttonLabels
+            );
 
         };
-
-        //        function alertDismissed() {
-        //            alert("alertDismissed");
-        //        }
-        //
-        //        navigator.notification.alert(
-        //            'You are the winner!',  // message
-        //            alertDismissed,         // callback
-        //            'Game Over',            // title
-        //            'Done'                  // buttonName
-        //        );
 
 
 
@@ -96,34 +87,6 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
             
-            var onConfirm = function (buttonIndex) {
-                alert("bt 1 " + buttonIndex);
-                if (buttonIndex == 1) {
-                    var selectedAppId = {};
-
-                    if (appName == 'lyft') {
-                        selectedAppId = "lyft:";
-                    } else {
-                        selectedAppId = "uber:";
-                    }
-                    window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
-                }
-            };
-
-
-
-            $scope.selectApp = function (appName) {
-                $scope.selectedAppName = "test";
-
-                navigator.notification.confirm(
-                    'You have selected ' + $scope.selectedAppNam, // message
-                     onConfirm,            // callback to invoke with index of button pressed
-                    'Run application',           // title
-                    ['Run', 'Cancel']     // buttonLabels
-                );
-
-            };
-
             $scope.selectApp();
             
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
