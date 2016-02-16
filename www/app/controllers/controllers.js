@@ -5,18 +5,18 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.init();
-                
+
         $scope.goToPage = function (pageName) {
             $location.path(pageName);
         };
 
-        var successCallback = function() {
+        var successCallback = function () {
         };
         var errorCallback = function () {
-//            alert('Errors');
+            //            alert('Errors');
         };
 
-        var onConfirm = function(buttonIndex) {
+        var onConfirm = function (buttonIndex) {
             if (buttonIndex == 1) {
                 var selectedAppId = {};
 
@@ -34,45 +34,45 @@ angular.module('climeride.controllers', [])
         $scope.selectApp = function (appName) {
             $scope.selectedAppName = appName;
 
-            navigator.notification.confirm(
-            'You have selected ' + $scope.selectedAppNam.toUpperCase(), // message
-             onConfirm,            // callback to invoke with index of button pressed
-            'Run application',           // title
-            ['Run', 'Cancel']     // buttonLabels
-        );
-            
+            navigator.notification.alert(
+                    'You have selected ' + $scope.selectedAppName,  // message
+                    onConfirm,         // callback
+                    'Run application',            // title
+                    'Run'                  // buttonName
+                );
+
         };
-        
-//        function alertDismissed() {
-//            alert("alertDismissed");
-//        }
-//
-//        navigator.notification.alert(
-//            'You are the winner!',  // message
-//            alertDismissed,         // callback
-//            'Game Over',            // title
-//            'Done'                  // buttonName
-//        );
+
+        //        function alertDismissed() {
+        //            alert("alertDismissed");
+        //        }
+        //
+        //        navigator.notification.alert(
+        //            'You are the winner!',  // message
+        //            alertDismissed,         // callback
+        //            'Game Over',            // title
+        //            'Done'                  // buttonName
+        //        );
 
 
-        
+
     }])
     .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
-                $scope.init = function() {
-                    
-                    
-                    $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
-                    
-                };
-        
-                $scope.init();
+        $scope.init = function () {
+
+
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
+
+        };
+
+        $scope.init();
         //        
-                $scope.goToPage = function (pageName) {
-                    $location.path(pageName);
-                };
+        $scope.goToPage = function (pageName) {
+            $location.path(pageName);
+        };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
         //alert('setupCtrl');
@@ -86,7 +86,7 @@ angular.module('climeride.controllers', [])
 
         $scope.androidUber = 'com.ubercab';
         $scope.androidLyft = 'me.lyft.android';
-        
+
         $scope.appStoreUberId = '368677368';
         $scope.appStoreLyftId = '529379082';
 
@@ -97,7 +97,34 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
-       
+            var onConfirm = function (buttonIndex) {
+                if (buttonIndex == 1) {
+                    var selectedAppId = {};
+
+                    if (appName == 'lyft') {
+                        selectedAppId = commonService.getLyftId();
+                    } else {
+                        selectedAppId = commonService.getUberId();
+                    }
+                    window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
+                }
+            };
+
+            $scope.selectedAppName = {};
+
+            $scope.selectApp = function (appName) {
+                $scope.selectedAppName = appName;
+
+                navigator.notification.confirm(
+                    'You have selected ' + $scope.selectedAppNam.toUpperCase(), // message
+                     onConfirm,            // callback to invoke with index of button pressed
+                    'Run application',           // title
+                    ['Run', 'Cancel']     // buttonLabels
+                );
+
+            };
+
+
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
@@ -105,12 +132,12 @@ angular.module('climeride.controllers', [])
 
             $scope.physicalScreenWidth = window.screen.width * window.devicePixelRatio;
             $scope.physicalScreenHeight = window.screen.height * window.devicePixelRatio;
-            
+
             $scope.height = window.screen.height;
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
 
-            
+
             if (typeof device == "undefined") {
                 return;
             }
@@ -130,11 +157,11 @@ angular.module('climeride.controllers', [])
             else if (device.platform === 'Android') {
                 schemeUber = $scope.androidUber;
                 schemeLyft = $scope.androidLyft;
-                
+
                 $scope.storeUberId = $scope.androidUber;
                 $scope.storeLyftId = $scope.androidLyft;
             }
-            
+
             commonService.setUberId(schemeUber);
             commonService.setLyftId(schemeLyft);
 
@@ -142,12 +169,12 @@ angular.module('climeride.controllers', [])
                 schemeUber,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.uberIsInstalled = true;
-//                                                alert("Uber installed");
+                    //                                                alert("Uber installed");
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.uberIsInstalled = false;
-//                                                alert("Uber not installed");
+                    //                                                alert("Uber not installed");
                     $scope.$digest();
                 }
             );
@@ -156,19 +183,19 @@ angular.module('climeride.controllers', [])
                 schemeLyft,       // URI Scheme or Package Name
                 function () {  // Success callback
                     $scope.lyftIsInstalled = true;
-//                                                alert("Lyft installed");
+                    //                                                alert("Lyft installed");
                     $scope.$digest();
                 },
                 function () {  // Error callback
                     $scope.lyftIsInstalled = false;
-//                                                alert("Lyft not installed");
+                    //                                                alert("Lyft not installed");
                     $scope.$digest();
                 }
             );
         };
 
         $scope.init();
-        
+
         $scope.onResume = function () {
             $scope.init();
         };
@@ -180,7 +207,7 @@ angular.module('climeride.controllers', [])
         $scope.addEv();
 
         $scope.installApp = function (appName) {
-//            alert('Install app run ' + appName + device.platform);
+            //            alert('Install app run ' + appName + device.platform);
             var appStoreId = {};
 
             if (appName == "uber") {
@@ -205,16 +232,16 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.alreadyRemove = false;
-        
-//        $scope.removeDefaultOption = function() {
-//            
-//            
-//            if (!$scope.alreadyRemove) {
-//                var x = document.getElementById("isS");
-//                x.remove(x.selectedIndex);
-//                $scope.alreadyRemove = true;
-//            }
-//        };
+
+        //        $scope.removeDefaultOption = function() {
+        //            
+        //            
+        //            if (!$scope.alreadyRemove) {
+        //                var x = document.getElementById("isS");
+        //                x.remove(x.selectedIndex);
+        //                $scope.alreadyRemove = true;
+        //            }
+        //        };
 
         $scope.getAppStatusClass = function (isInstalled) {
             if (isInstalled) {
@@ -223,7 +250,7 @@ angular.module('climeride.controllers', [])
                 return 'app-status-notinstalled';
             }
         };
-        
+
         $scope.disableStyle = function (value) {
             if (value) {
                 return 'disable-style';
@@ -231,7 +258,7 @@ angular.module('climeride.controllers', [])
                 return;
             }
         };
-        
+
         //
         //        $scope.updateStatus = function () {
         //            $scope.uberAvailable = !$scope.uberAvailable;
