@@ -19,7 +19,7 @@ angular.module('climeride.controllers', [])
         var onConfirm = function () {
             var selectedAppId = {};
 
-            if ($scope.selectedAppName == 'lyft') {
+            if ($scope.selectedAppName == 'Lyft') {
                 selectedAppId = commonService.getLyftId();
             } else {
                 selectedAppId = commonService.getUberId();
@@ -95,6 +95,34 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
+            
+            var onConfirm = function (buttonIndex) {
+                alert("bt 1 " + buttonIndex);
+                if (buttonIndex == 1) {
+                    var selectedAppId = {};
+
+                    if (appName == 'lyft') {
+                        selectedAppId = "lyft:";
+                    } else {
+                        selectedAppId = "uber:";
+                    }
+                    window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
+                }
+            };
+
+
+
+            $scope.selectApp = function (appName) {
+                $scope.selectedAppName = "test";
+
+                navigator.notification.confirm(
+                    'You have selected ' + $scope.selectedAppNam, // message
+                     onConfirm,            // callback to invoke with index of button pressed
+                    'Run application',           // title
+                    ['Run', 'Cancel']     // buttonLabels
+                );
+
+            };
             
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
