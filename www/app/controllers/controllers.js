@@ -87,8 +87,6 @@ angular.module('climeride.controllers', [])
 
         $scope.init = function () {
             
-            $scope.selectApp();
-            
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
