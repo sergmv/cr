@@ -38,6 +38,31 @@ angular.module('climeride.services', [])
         commonService.getLyftId = function () {
             return appConfig.lyftId;
         };
+        
+        //---------------------------
+        commonService.setClaimNumber = function (value) {
+            appConfig.claimNumber = value;
+        };
+        
+        commonService.setHolderName = function (value) {
+            appConfig.holderName = value;
+        };
+        
+        commonService.setZipCode = function (value) {
+            appConfig.zipCode = value;
+        };
+        
+        commonService.getClaimNumber = function () {
+            return appConfig.claimNumber;
+        };
+        
+        commonService.getHolderName = function () {
+            return appConfig.holderName;
+        };
+        
+        commonService.getZipCode = function () {
+            return appConfig.zipCode;
+        };
 
         return commonService;
     }]);
