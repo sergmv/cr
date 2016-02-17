@@ -141,6 +141,13 @@ angular.module('climeride.controllers', [])
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
             
+            if (typeof device == "undefined") {
+                return;
+            }
+
+            alert("1");
+           
+
             Inputmask("9{4}-9{6}-9{5}", {
                 definitions: {
                     "*": {
@@ -154,7 +161,7 @@ angular.module('climeride.controllers', [])
                     }
                 }
             }).mask("#claimNumber");
-            
+
             Inputmask("9{5}", {
                 definitions: {
                     "*": {
@@ -168,14 +175,7 @@ angular.module('climeride.controllers', [])
                     }
                 }
             }).mask("#zipCode");
-            
-            if (typeof device == "undefined") {
-                return;
-            }
-            
-            $("#claimNumber").mask("9999-999999-99999", { placeholder: " " });
-            $("#zipCode").mask("99999", { placeholder: " " });
-
+            alert("2");
 
             var schemeUber;
             var schemeLyft;
