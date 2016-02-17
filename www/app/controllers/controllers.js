@@ -143,9 +143,9 @@ angular.module('climeride.controllers', [])
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
             
-            $scope.claimNumber = commonService.getClaimNumber();
-            $scope.policeHolder = commonService.getHolderName();
-            $scope.zipCode = commonService.getZipCode();
+//            $scope.claimNumber = commonService.getClaimNumber();
+//            $scope.policeHolder = commonService.getHolderName();
+//            $scope.zipCode = commonService.getZipCode();
             
             if (typeof device == "undefined") {
                 return;
@@ -239,9 +239,9 @@ angular.module('climeride.controllers', [])
         };
 
         $scope.goToPage = function (pageName) {
-            commonService.setClaimNumber($scope.claimNumber);
-            commonService.setHolderName($scope.policeHolder);
-            commonService.setZipCode($scope.zipCode);
+//            commonService.setClaimNumber($scope.claimNumber);
+//            commonService.setHolderName($scope.policeHolder);
+//            commonService.setZipCode($scope.zipCode);
 
             $location.path(pageName);
         };
