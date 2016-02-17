@@ -73,7 +73,7 @@ angular.module('climeride.controllers', [])
             $location.path(pageName);
         };
     }])
-    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'ngMask', 'commonService', function ($scope, $http, $location, $route, ngMask, commonService) {
+    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
         //alert('setupCtrl');
 
         $scope.uberIsInstalled = true;
