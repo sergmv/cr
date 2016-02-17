@@ -24,7 +24,7 @@
                 </select>
             </div>
             <div>
-                <input type="tel" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" pattern="\d*" maxlength="15" ng-model="claimNumber" ng-blur="validateClaimNumberFields()">
+                <input type="tel" id="claimNumber" ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" ng-model="claimNumber" ng-blur="validateClaimNumberFields()">
                 <div ng-if="!claimNumberValid" style="width: 32%; display: block; background-color: #EB5767; color: white; margin: 10px auto; margin-left: 0px; height: 10vw; float: right">
                     <span style="padding-top: 2.3vw; display: table; margin: 0 auto;">Invalid number</span>
                 </div>
@@ -33,7 +33,7 @@
             <input type="text" id="prInsured" name="prInsured" placeholder="Policy Holder" title="Policy Holder">
 
             <div>
-                <input type="tel" id="zipCode" ng-class="{'invalidValue': !zipValid}" name="zipCode" placeholder="Billing ZipCode" pattern="\d*" maxlength="6" title="Billing ZipCode" ng-model="zipCode" ng-blur="validateZip()">
+                <input type="tel" id="zipCode" ng-class="{'invalidValue': !zipValid}" name="zipCode" placeholder="Billing ZipCode" title="Billing ZipCode" ng-model="zipCode" ng-blur="validateZip()">
                 <div ng-if="!zipValid" style="width: 32%; display: block; background-color: #EB5767; color: white; margin: 10px auto; margin-left: 0px; height: 10vw; float: right">
                     <span style="padding-top: 2.3vw; display: table; margin: 0 auto;">Invalid ZipCode</span>
                 </div>

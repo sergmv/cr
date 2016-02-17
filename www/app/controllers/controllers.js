@@ -32,14 +32,24 @@ angular.module('climeride.controllers', [])
         $scope.selectedAppName = {};
 
         $scope.selectApp = function (appName) {
-            $scope.selectedAppName = appName;
+            var selectedAppId = {};
 
-            navigator.notification.confirm(
-                'You have selected ' + $scope.selectedAppName, // message
-                 onConfirm,            // callback to invoke with index of button pressed
-                'Run application',           // title
-                ['Run', 'Cancel']     // buttonLabels
-            );
+            if ($scope.selectedAppName == 'Lyft') {
+                selectedAppId = commonService.getLyftId();
+            } else {
+                selectedAppId = commonService.getUberId();
+            }
+            window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
+
+
+//            $scope.selectedAppName = appName;
+//
+//            navigator.notification.confirm(
+//                'You have selected ' + $scope.selectedAppName, // message
+//                 onConfirm,            // callback to invoke with index of button pressed
+//                'Run application',           // title
+//                ['Run', 'Cancel']     // buttonLabels
+//            );
 
         };
 
@@ -96,8 +106,10 @@ angular.module('climeride.controllers', [])
         var numberRegExp = /^-?[0-9]+$/;
         
         $scope.validateClaimNumberFields = function () {
+//            var claimNumber = $scope.claimNumber.replace(/\D/g, '');
+            var claimNumber = $scope.claimNumber.replace('-', '').replace('-', '');
             
-            if ($scope.claimNumber.length == 15 && numberRegExp.test($scope.claimNumber) && $scope.claimNumber == "789789789789789") {
+            if (claimNumber.length == 15 && numberRegExp.test(claimNumber)) {
                 $scope.claimNumberValid = true;
             } else {
                 $scope.claimNumberValid = false;
@@ -105,8 +117,9 @@ angular.module('climeride.controllers', [])
         };
         
         $scope.validateZip = function () {
-
-            if ($scope.zipCode.length == 6 && numberRegExp.test($scope.zipCode) && $scope.zipCode == "123456") {
+            var zipCode = $scope.zipCode.replace('-', '').replace('-', '');
+            
+            if (zipCode.length == 5 && numberRegExp.test(zipCode)) {
                 $scope.zipValid = true;
             } else {
                 $scope.zipValid = false;
@@ -127,11 +140,41 @@ angular.module('climeride.controllers', [])
             $scope.height = window.screen.height;
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
-
-
+            
+            Inputmask("9{4}-9{6}-9{5}", {
+                definitions: {
+                    "*": {
+                        validator: function (chrs, maskset, pos, strict, opts) {
+                            var isValid = new RegExp("[0-9]").test(chrs);
+                            return isValid !== true || {
+                                c: '*'
+                            };
+                        },
+                        cardinality: 1
+                    }
+                }
+            }).mask("#claimNumber");
+            
+            Inputmask("9{5}", {
+                definitions: {
+                    "*": {
+                        validator: function (chrs, maskset, pos, strict, opts) {
+                            var isValid = new RegExp("[0-9]").test(chrs);
+                            return isValid !== true || {
+                                c: '*'
+                            };
+                        },
+                        cardinality: 1
+                    }
+                }
+            }).mask("#zipCode");
+            
             if (typeof device == "undefined") {
                 return;
             }
+            
+            $("#claimNumber").mask("9999-999999-99999", { placeholder: " " });
+            $("#zipCode").mask("99999", { placeholder: " " });
 
 
             var schemeUber;
