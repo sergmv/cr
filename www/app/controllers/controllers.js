@@ -16,23 +16,25 @@ angular.module('climeride.controllers', [])
             //            alert('Errors');
         };
 
-        var onConfirm = function (buttonIndex) {
-            if (buttonIndex == 1) {
-                var selectedAppId = {};
-
-                if ($scope.selectedAppName == 'Lyft') {
-                    selectedAppId = commonService.getLyftId();
-                } else {
-                    selectedAppId = commonService.getUberId();
-                }
-                window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
-            }
-        };
+//        var onConfirm = function (buttonIndex) {
+//            if (buttonIndex == 1) {
+//                var selectedAppId = {};
+//
+//                if ($scope.selectedAppName == 'Lyft') {
+//                    selectedAppId = commonService.getLyftId();
+//                } else {
+//                    selectedAppId = commonService.getUberId();
+//                }
+//                window.plugins.launcher.launch({ uri: selectedAppId }, successCallback, errorCallback);
+//            }
+//        };
 
         $scope.selectedAppName = {};
 
         $scope.selectApp = function (appName) {
             var selectedAppId = {};
+
+            $scope.selectedAppName = appName;
 
             if ($scope.selectedAppName == 'Lyft') {
                 selectedAppId = commonService.getLyftId();
