@@ -1,4 +1,4 @@
-angular.module('climeride', ['ngRoute', 'climeride.services', 'climeride.controllers'])
+angular.module('climeride', ['ngRoute', 'ngMask', 'climeride.services', 'climeride.controllers'])
     // .config(['$compileProvider', function ($compileProvider) {
     //     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     // }])

@@ -73,7 +73,7 @@ angular.module('climeride.controllers', [])
             $location.path(pageName);
         };
     }])
-    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
+    .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'ngMask', 'commonService', function ($scope, $http, $location, $route, ngMask, commonService) {
         //alert('setupCtrl');
 
         $scope.uberIsInstalled = true;
@@ -144,38 +144,6 @@ angular.module('climeride.controllers', [])
             if (typeof device == "undefined") {
                 return;
             }
-
-            alert("1");
-           
-
-            Inputmask("9{4}-9{6}-9{5}", {
-                definitions: {
-                    "*": {
-                        validator: function (chrs, maskset, pos, strict, opts) {
-                            var isValid = new RegExp("[0-9]").test(chrs);
-                            return isValid !== true || {
-                                c: '*'
-                            };
-                        },
-                        cardinality: 1
-                    }
-                }
-            }).mask("#claimNumber");
-
-            Inputmask("9{5}", {
-                definitions: {
-                    "*": {
-                        validator: function (chrs, maskset, pos, strict, opts) {
-                            var isValid = new RegExp("[0-9]").test(chrs);
-                            return isValid !== true || {
-                                c: '*'
-                            };
-                        },
-                        cardinality: 1
-                    }
-                }
-            }).mask("#zipCode");
-            alert("2");
 
             var schemeUber;
             var schemeLyft;
