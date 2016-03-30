@@ -76,7 +76,12 @@ angular.module('climeride.controllers', [])
         };
     }])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
-        //alert('setupCtrl');
+
+        $scope.carriers = commonService.carriers;
+
+        $scope.storeLinks = commonService.storeLinks;
+
+        $scope.datar = {};
 
         $scope.uberIsInstalled = true;
         $scope.lyftIsInstalled = true;
@@ -130,7 +135,8 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
-            
+            $scope.datar.selectedCarrier = $scope.carriers[0];
+
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
             $scope.logoCtrH = $(window).height() - $('#content-ctr').height() - 30;
@@ -234,6 +240,16 @@ angular.module('climeride.controllers', [])
             } else {
                 if (device.platform == "Android") {
                     window.open('https://play.google.com/store/apps/details?id=' + appStoreId, '_system');
+                }
+            }
+        };
+
+        $scope.openCarrier = function(carrier) {
+            if (device.platform == "iOS") {
+                window.open("itms-apps://itunes.apple.com/app/id" + carrier.AppStore);
+            } else {
+                if (device.platform == "Android") {
+                    window.open('https://play.google.com/store/apps/details?id=' + GooglePlay, '_system');
                 }
             }
         };

@@ -23,6 +23,32 @@ angular.module('climeride.services', [])
 
         var commonService = {};
 
+        commonService.carriers = [
+        {
+            Id: 1,
+            Title: "LINKS INSURANCE SERVICE",
+            GooglePlay: "me.snapsheet.gmac",
+            AppStore: "id574846721"
+        },
+        {
+            Id: 2,
+            Title: "LINKS INSURANCE SERVICE 2"
+        },
+            {
+                Id: 3,
+                Title: "National General Insurance"
+            }
+            
+        ];
+
+        commonService.storeLinks = [
+            {
+                Id: 3,
+                
+            }
+        ];
+
+
         commonService.setUberId = function (value) {
             appConfig.uberId = value;
         };
@@ -63,6 +89,10 @@ angular.module('climeride.services', [])
         commonService.getZipCode = function () {
             return appConfig.zipCode;
         };
+
+        commonService.isAgreement
+
+
 
         return commonService;
     }]);

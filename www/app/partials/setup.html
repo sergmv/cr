@@ -15,14 +15,17 @@
             <!--                <span>height </span><span ng-bind="height"></span><br/>-->
             <!--                <span>width </span><span ng-bind="width"></span><br/>-->
             <!--                <span>devicePixelRatio </span><span ng-bind="devicePixelRatio"></span><br/>-->
-            <!--            </div>-->
+            <!-- </div>-->
+            <div style="color:red">{{datar.selectedCarrier}}</div>
             <div class="select-container">
-                <select id="isS">
-                    <option value="def" default selected>Choose Carrier</option>
-                    <option value="1">LINKS INSURANCE SERVICE</option>
-                    <option value="2">LINKS INSURANCE SERVICE 2</option>
+                <select id="isS" ng-options="item as item.Title for item in carriers" ng-model="datar.selectedCarrier">
                 </select>
             </div>
+
+            <div ng-if="datar.selectedCarrier.Id == 3" style="color: wheat;">
+                <div ng-click="openCarrier(datar.selectedCarrier)">Open National General Insurance</div>
+            </div>
+
             <div>
                 <input type="tel" id="claimNumber" mask="9999-999999-99999" clean="true"  ng-class="{'invalidValue': !claimNumberValid}" name="claimNumber" placeholder="Claim Number" ng-model="claimNumber" ng-blur="validateClaimNumberFields()">
                 <div ng-if="!claimNumberValid" style="width: 32%; display: block; background-color: #EB5767; color: white; margin: 10px auto; margin-left: 0px; height: 10vw; float: right">
