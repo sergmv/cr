@@ -140,6 +140,14 @@ h1 {
     content:url("../img/red1.png");
 }
 
+.credit-card-icon{
+    content:url("../img/card_i1.png");
+}
+
+.credit-card-img {
+    content:url("../img/card.png");
+}
+
 .responsive-container {
     position: relative;
     width: 100vw;
