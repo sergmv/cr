@@ -4,17 +4,29 @@ angular.module('climeride', ['ngRoute', 'ngMask', 'climeride.services', 'climeri
     // }])
     .config(function ($routeProvider) {
         $routeProvider
-        .when('/', {
-            controller: 'setupCtrl',
-            templateUrl: 'app/partials/setup.html'
-        })
-        .when('/welcome', {
-            controller: 'welcomeCtrl',
-            templateUrl: 'app/partials/welcome.html'
-        })
-        .when('/requestride', {
-            controller: 'requestrideCtrl',
-            templateUrl: 'app/partials/requestride.html'
-        })
-        .otherwise({redirectTo: '/'});
+            .when('/', {
+                controller: 'setupCtrl',
+                templateUrl: 'app/partials/setup.html'
+            })
+            .when('/welcome', {
+                controller: 'welcomeCtrl',
+                templateUrl: 'app/partials/welcome.html'
+            })
+            .when('/requestride', {
+                controller: 'requestrideCtrl',
+                templateUrl: 'app/partials/requestride.html'
+            })
+            .when('/requestride', {
+                controller: 'requestrideCtrl',
+                templateUrl: 'app/partials/requestride.html'
+            })
+            .when('/card', {
+                controller: 'cardCtrl',
+                templateUrl: 'app/partials/card.html'
+            })
+            .when('/agreements', {
+                controller: 'cardCtrl',
+                templateUrl: 'app/partials/agreements.html'
+            })
+        .otherwise({ redirectTo: '/' });
     });

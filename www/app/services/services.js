@@ -23,6 +23,13 @@ angular.module('climeride.services', [])
 
         var commonService = {};
 
+        commonService.agreementAccepted = false;
+
+        commonService.goBack = function() {
+            
+        }
+
+
         commonService.carriers = [
         {
             Id: 1,
@@ -40,6 +47,12 @@ angular.module('climeride.services', [])
             }
             
         ];
+
+        //commonService.init = function() {
+            
+        //}
+
+        appConfig.selectedCarrier = commonService.carriers[0];
 
         commonService.storeLinks = [
             {
@@ -90,7 +103,16 @@ angular.module('climeride.services', [])
             return appConfig.zipCode;
         };
 
-        commonService.isAgreement
+        commonService.getSelectedCarrier = function () {
+            return appConfig.selectedCarrier;
+        };
+
+        commonService.setSelectedCarrier = function (value) {
+            appConfig.selectedCarrier = value;
+        };
+        
+
+        //commonService.isAgreement
 
 
 

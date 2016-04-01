@@ -16,13 +16,13 @@
             <!--                <span>width </span><span ng-bind="width"></span><br/>-->
             <!--                <span>devicePixelRatio </span><span ng-bind="devicePixelRatio"></span><br/>-->
             <!-- </div>-->
-            <div style="color:red">{{datar.selectedCarrier}}</div>
+            <!--<div style="color:red">{{datar.selectedCarrier}}</div>-->
             <div class="select-container">
-                <select id="isS" ng-options="item as item.Title for item in carriers" ng-model="datar.selectedCarrier">
+                <select id="isS" ng-options="item as item.Title for item in carriers" ng-change="carrierChange(datar.selectedCarrier)" ng-model="datar.selectedCarrier">
                 </select>
             </div>
 
-            <div ng-if="datar.selectedCarrier.Id == 3" style="color: wheat;">
+            <div ng-if="datar.selectedCarrier.Id == 3" style="color: #EB5767; text-align: right; margin: 15px 0; text-decoration: underline">
                 <div ng-click="openCarrier(datar.selectedCarrier)">Open National General Insurance</div>
             </div>
 

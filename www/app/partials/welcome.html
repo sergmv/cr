@@ -4,7 +4,7 @@
         <img src="../www/img/logo.png" style="vertical-align: middle; width: 75vmin;" />
     </div>
 
-    <div id="content-ctr" class="content-container" style="color:#fff; ">
+    <div id="content-ctr" class="content-container" style="color: #fff;">
         <div class="input-container">
             <div style="text-align: left; margin-bottom: 10px">
                 <span style="font-size: 1.3em" class="info-icon">Your information:</span>
@@ -29,12 +29,29 @@
 
         <div class="gray-line"></div>
 
-        <div class="input-container" style="margin-bottom: 15%">
+
+        
+        <div class="input-container">
             <div style="text-align: left; margin: 20px 0 10px 0">
                 <span style="font-size: 1.3em" class="benefit-icon">Benefit Summary:</span>
             </div>
-            
-            <div class="table-info benefit-section">
+
+            <!--<div class="table-info benefit-section" style="display: inline-block">
+                <div>
+                    <span>Daily Limit:</span>
+                    <span>$30.00</span>
+                </div>
+                <div>
+                    <span>Max Coverage</span>
+                    <span>$300.00</span>
+                </div>
+                <div>
+                    <span>Available Balance</span>
+                    <span>$300.00</span>
+                </div>
+            </div>-->
+
+            <div class="table-info benefit-section float-left">
                 <div>
                     <span>Daily Limit:</span>
                     <span>$30.00</span>
@@ -48,10 +65,20 @@
                     <span>$300.00</span>
                 </div>
             </div>
+
+            <img src="../../www/img/card_i1.png" ng-click="goToPage('/card')"/>
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="gray-line"></div>
+
+        <div class="" ng-click="goToPage('/agreements')" style="color: white; text-decoration: underline; text-align: left; margin-left: 20px;">
+            <img align="middle" alt="" style="margin-right: 15px" ng-class="{'agreement-accepted': agreementAccepted, 'agreement-unaccepted': !agreementAccepted}">Acknowledge Agreements
         </div>
 
         <div class="clearfix"></div>
-        <div class="btn-get-started request-btn" ng-click="goToPage('/requestride')">
+        <div class="btn-get-started request-btn" ng-class="{'disable-style': !agreementAccepted}" ng-click="!agreementAccepted || goToPage('/requestride')">
             <span>Request Ride</span>
         </div>
         <div class="clearfix"></div>

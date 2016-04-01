@@ -1,4 +1,22 @@
 angular.module('climeride.controllers', [])
+    .controller('cardCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
+        $scope.init = function () {
+            $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
+        };
+
+        $scope.agreementAccepted = commonService.agreementAccepted;
+
+        $scope.setAgree = function () {
+            commonService.agreementAccepted = true;
+            $scope.agreementAccepted = true;
+        }
+
+        $scope.init();
+
+        $scope.goToPage = function (pageName) {
+            $location.path(pageName);
+        };
+    }])
     .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
         $scope.init = function () {
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
@@ -58,10 +76,13 @@ angular.module('climeride.controllers', [])
 
 
     }])
-    .controller('welcomeCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+    .controller('welcomeCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
         //        alert('welcomeCtrl');
         //        $scope.greeting = "dsds";
         //
+
+        $scope.agreementAccepted = commonService.agreementAccepted;
+
         $scope.init = function () {
 
 
@@ -135,7 +156,11 @@ angular.module('climeride.controllers', [])
 
 
         $scope.init = function () {
-            $scope.datar.selectedCarrier = $scope.carriers[0];
+            $scope.datar.selectedCarrier = commonService.getSelectedCarrier();
+
+            //$scope.claimNumber = "456456456456456";
+            //$scope.policeHolder = "Test Holder ";
+            //$scope.zipCode = "57565";
 
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
 
@@ -252,6 +277,10 @@ angular.module('climeride.controllers', [])
                     window.open('https://play.google.com/store/apps/details?id=' + GooglePlay, '_system');
                 }
             }
+        };
+
+        $scope.carrierChange = function (value) {
+            commonService.setSelectedCarrier(value);
         };
 
         $scope.goToPage = function (pageName) {

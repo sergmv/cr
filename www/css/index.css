@@ -132,7 +132,13 @@ h1 {
 }
 
 
+.agreement-accepted {
+    content:url("../img/blue1.png");
+}
 
+.agreement-unaccepted {
+    content:url("../img/red1.png");
+}
 
 .responsive-container {
     position: relative;
@@ -187,6 +193,7 @@ input:focus:invalid {
 .input-container {
     width: 90%;
     margin: 0 auto 20px;
+    position: relative;
 }
 
     .input-container input {
@@ -436,7 +443,6 @@ input {
 
 .table-info {
     text-align: left;
-    width: 100%;
     margin-bottom: 5%;
 }
 
@@ -445,15 +451,20 @@ input {
     }
 
         .table-info > div > span:first-of-type {
-            min-width: 40%;
+            min-width: 50%;
             color: #00BDBD;
             display: inline-block;
         }
 
         .table-info > div > span:nth-child(2) {
-            min-width: 20%;
+            min-width: 25%;
             display: inline-block;
         }
+
+.benefit-section {
+    width: 70%;
+
+}
 
 .benefit-section > div > span:nth-child(2) {
     text-align: right;

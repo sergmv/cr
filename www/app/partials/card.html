@@ -1,0 +1,28 @@
+<div style="position: relative; width: 100%; height: 100%; text-align: center;">
+    <div class="back-buton" ng-click="goToPage('/welcome')"></div>
+    <div id="imgCtr" style="line-height: 0px;">
+        <img src="../www/img/logo.png" style="vertical-align: middle; width: 75vmin;" />
+    </div>
+
+    <div id="content-ctr" class="content-container" style="color: white;">
+        <div class="gray-line"></div>
+
+        <img src="../../www/img/card.png"/>
+
+        <div class="" ng-click="goToPage('/agreements')" style="color: white; text-decoration: underline; text-align: left; margin: 20px 0 0 20px;">
+            <img align="middle" alt="" style="margin-right: 15px" ng-class="{'agreement-accepted': agreementAccepted, 'agreement-unaccepted': !agreementAccepted}">Acknowledge Agreements
+        </div>
+        <div class="gray-line"></div>
+        <div style="height: 100px;"></div>
+
+        
+
+        <div class="clearfix"></div>
+        <div class="btn-get-started" ng-click="goToPage('/welcome')">
+            <span>Dismiss</span>
+        </div>
+    </div>
+    
+    
+    
+</div>
