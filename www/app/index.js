@@ -19,8 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function() {
-//        this.bindEvents();
-        angular.bootstrap(document, ["climeride"]);
+        this.bindEvents();
+//        angular.bootstrap(document, ["climeride"]);
     },
     // Bind Event Listeners
     //
