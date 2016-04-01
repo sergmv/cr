@@ -110,6 +110,9 @@ angular.module('climeride.services', [])
         commonService.setSelectedCarrier = function (value) {
             appConfig.selectedCarrier = value;
         };
+
+
+        commonService.reminderBoxShow = true;
         
 
         //commonService.isAgreement

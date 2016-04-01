@@ -5,6 +5,13 @@
     </div>
 
     <div id="content-ctr" class="content-container" style="color: white;">
+        <div class="gray-line" ng-show="reminderBoxShow"></div>
+        <div ng-show="reminderBoxShow" style="width: 70%;margin: 0 auto;border: 1px solid gray; border-radius: 20px;padding: 20px;">
+            Please update your ride share provider with your virtual credit card
+            <div ng-click="reminderBoxHide()" style="color: #EB5767; text-decoration: underline; text-align: right;">
+                Dismiss
+            </div>
+        </div>
         <div class="gray-line"></div>
         <div class="app-status-container">
             <p>Choose Ride Share Service</p>

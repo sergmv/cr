@@ -18,9 +18,14 @@ angular.module('climeride.controllers', [])
         };
     }])
     .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
+
+        $scope.reminderBoxShow = commonService.reminderBoxShow;
+
+
         $scope.init = function () {
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
         };
+
 
         $scope.init();
 
@@ -33,6 +38,11 @@ angular.module('climeride.controllers', [])
         var errorCallback = function () {
             //            alert('Errors');
         };
+
+        $scope.reminderBoxHide = function () {
+            $scope.reminderBoxShow = false;
+            commonService.reminderBoxShow = false;
+        }
 
 //        var onConfirm = function (buttonIndex) {
 //            if (buttonIndex == 1) {
