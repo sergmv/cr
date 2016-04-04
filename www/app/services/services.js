@@ -138,6 +138,12 @@ angular.module('climeride.services', [])
             return appConfig.agreementAccepted;
         };
 
+        commonService.resetUserInfo = function () {
+            appConfig.claimNumber = "";
+            appConfig.holderName = "";
+            appConfig.zipCode = "";
+        };
+
 
         commonService.appConfig = appConfig;
 

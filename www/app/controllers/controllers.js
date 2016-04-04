@@ -293,6 +293,11 @@ angular.module('climeride.controllers', [])
         $scope.carrierChange = function (value) {
             commonService.setSelectedCarrier(value);
             commonService.resetAgreementAccepted();
+            commonService.resetUserInfo();
+
+            $scope.claimNumber = commonService.getClaimNumber();
+            $scope.policeHolder = commonService.getHolderName();
+            $scope.zipCode = commonService.getZipCode();
         };
 
         $scope.goToPage = function (pageName) {
