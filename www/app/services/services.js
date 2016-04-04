@@ -23,7 +23,7 @@ angular.module('climeride.services', [])
 
         var commonService = {};
 
-        appConfig.agreementAccepted = typeof localStorage.agreementAccepted == "undefined" ? false : localStorage.agreementAccepted;
+        
 
         appConfig.reminderBoxShow = true;
 
@@ -54,11 +54,17 @@ angular.module('climeride.services', [])
 
         ];
 
-        //commonService.init = function() {
+        commonService.init = function () {
+            if (typeof appConfig.selectedCarrier == "undefined") {
+                localStorage.clear();
+            }
 
-        //}
+            appConfig.agreementAccepted = typeof localStorage.agreementAccepted == "undefined" ? false : localStorage.agreementAccepted;
 
-        appConfig.selectedCarrier = commonService.carriers[0];
+            appConfig.selectedCarrier = commonService.carriers[0];
+        }
+
+        
 
 
         commonService.setUberId = function (value) {
@@ -134,6 +140,8 @@ angular.module('climeride.services', [])
 
 
         commonService.appConfig = appConfig;
+
+        commonService.init();
 
         return commonService;
     }]);
