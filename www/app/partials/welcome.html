@@ -8,21 +8,21 @@
         <div class="input-container">
             <div style="text-align: left; margin-bottom: 10px">
                 <span style="font-size: 1.3em" class="info-icon">Your information:</span>
-                <span class="float-right" style="color: #EB5767; font-size: 0.8em ;text-decoration: underline">Edit Information</span>
+                <!--<span class="float-right" style="color: #EB5767; font-size: 0.8em ;text-decoration: underline">Edit Information</span>-->
             </div>
             <div class="clearfix"></div>
-            <div class="table-info">
+            <div class="table-info info-section">
                 <div>
                     <span>Carrier:</span>
-                    <span>Link Insurance Services</span>
+                    <span>{{appConfig.selectedCarrier.Title}}</span>
                 </div>
                 <div>
                     <span>Claim Number</span>
-                    <span>3717-526617-04099</span>
+                    <span>{{appConfig.claimNumber}}</span>
                 </div>
                 <div>
                     <span>Billing Zipcode</span>
-                    <span>30033</span>
+                    <span>{{appConfig.zipCode}}</span>
                 </div>
             </div>
         </div>

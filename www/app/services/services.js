@@ -23,10 +23,12 @@ angular.module('climeride.services', [])
 
         var commonService = {};
 
-        commonService.agreementAccepted = false;
+        appConfig.agreementAccepted = typeof localStorage.agreementAccepted == "undefined" ? false : localStorage.agreementAccepted;
 
-        commonService.goBack = function() {
-            
+        appConfig.reminderBoxShow = true;
+
+        commonService.goBack = function () {
+
         }
 
 
@@ -34,38 +36,35 @@ angular.module('climeride.services', [])
         {
             Id: 1,
             Title: "LINKS INSURANCE SERVICE",
-            GooglePlay: "me.snapsheet.gmac",
-            AppStore: "id574846721"
+            GooglePlay: "me.snapsheet.gmachfghfghgf65",
+            AppStore: "5748467254dfghfdhfghfg1"
         },
         {
             Id: 2,
-            Title: "LINKS INSURANCE SERVICE 2"
+            Title: "LINKS INSURANCE SERVICE 2",
+            GooglePlay: "me.snapsheet.gmachfghfghgf6yrt5",
+            AppStore: "5748467254dfghfdhfgyrtyhfg1"
         },
-            {
-                Id: 3,
-                Title: "National General Insurance"
-            }
-            
+         {
+             Id: 3,
+             Title: "National General Insurance",
+             GooglePlay: "me.snapsheet.gmac",
+             AppStore: "574846721"
+         }
+
         ];
 
         //commonService.init = function() {
-            
+
         //}
 
         appConfig.selectedCarrier = commonService.carriers[0];
-
-        commonService.storeLinks = [
-            {
-                Id: 3,
-                
-            }
-        ];
 
 
         commonService.setUberId = function (value) {
             appConfig.uberId = value;
         };
-        
+
         commonService.setLyftId = function (value) {
             appConfig.lyftId = value;
         };
@@ -73,32 +72,32 @@ angular.module('climeride.services', [])
         commonService.getUberId = function () {
             return appConfig.uberId;
         };
-        
+
         commonService.getLyftId = function () {
             return appConfig.lyftId;
         };
-        
+
         //---------------------------
         commonService.setClaimNumber = function (value) {
             appConfig.claimNumber = value;
         };
-        
+
         commonService.setHolderName = function (value) {
             appConfig.holderName = value;
         };
-        
+
         commonService.setZipCode = function (value) {
             appConfig.zipCode = value;
         };
-        
+
         commonService.getClaimNumber = function () {
             return appConfig.claimNumber;
         };
-        
+
         commonService.getHolderName = function () {
             return appConfig.holderName;
         };
-        
+
         commonService.getZipCode = function () {
             return appConfig.zipCode;
         };
@@ -111,13 +110,30 @@ angular.module('climeride.services', [])
             appConfig.selectedCarrier = value;
         };
 
+        commonService.setReminderBoxShowStatus = function (value) {
+            appConfig.reminderBoxShow = value;
+        };
 
-        commonService.reminderBoxShow = true;
-        
+        commonService.getReminderBoxShowStatus = function () {
+            return appConfig.reminderBoxShow;
+        };
 
-        //commonService.isAgreement
+        commonService.setAgreementAccepted = function () {
+            localStorage.agreementAccepted = true;
+            appConfig.agreementAccepted = true;
+        };
+
+        commonService.resetAgreementAccepted = function () {
+            localStorage.agreementAccepted = false;
+            appConfig.agreementAccepted = false;
+        };
+
+        commonService.getAgreementAccepted = function () {
+            return appConfig.agreementAccepted;
+        };
 
 
+        commonService.appConfig = appConfig;
 
         return commonService;
     }]);

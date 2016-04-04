@@ -5,11 +5,15 @@
     </div>
 
     <div id="content-ctr" class="content-container" style="color: white;">
-        <div class="gray-line" ng-show="reminderBoxShow"></div>
-        <div ng-show="reminderBoxShow" style="width: 70%;margin: 0 auto;border: 1px solid gray; border-radius: 20px;padding: 20px;">
-            Please update your ride share provider with your virtual credit card
-            <div ng-click="reminderBoxHide()" style="color: #EB5767; text-decoration: underline; text-align: right;">
-                Dismiss
+        <div ng-show="reminderBoxShow">
+            <div class="gray-line"></div>
+            <img class="credit-card-img" />
+            <div class="gray-line"></div>
+            <div style="width: 70%; margin: 0 auto; border: 1px solid gray; border-radius: 20px; padding: 20px;">
+                Please update your ride share provider with your virtual credit card
+                <div ng-click="reminderBoxHide()" style="color: #EB5767; text-decoration: underline; text-align: right;">
+                    Completed
+                </div>
             </div>
         </div>
         <div class="gray-line"></div>
@@ -18,14 +22,14 @@
             <div class="float-left">
                 <div class="btn-app-status" ng-class="getAppStatusClass(lyftIsInstalled)" ng-click="selectApp('Lyft')">
                     <div>
-                        <img src="./../www/img/lyft-logo.png" />
+                        <img src="./../www/img/lyft-logo.png"/>
                     </div>
                 </div>
             </div>
             <div class="float-right">
                 <div class="btn-app-status" ng-class="getAppStatusClass(uberIsInstalled)" ng-click="selectApp('Uber')">
                     <div>
-                        <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto" />
+                        <img src="./../www/img/uber-logo.png" style="height: 1.8vh; width: auto"/>
                     </div>
                 </div>
             </div>
