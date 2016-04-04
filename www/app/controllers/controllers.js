@@ -4,10 +4,10 @@ angular.module('climeride.controllers', [])
             $('#imgCtr').css({ 'line-height': $(window).height() - $('#content-ctr').height() - 20 + 'px' });
         };
 
-        $scope.agreementAccepted = commonService.agreementAccepted;
+        $scope.agreementAccepted = commonService.getAgreementAccepted();
 
         $scope.setAgree = function () {
-            commonService.agreementAccepted = true;
+            commonService.setAgreementAccepted();
             $scope.agreementAccepted = true;
         }
 
@@ -19,7 +19,7 @@ angular.module('climeride.controllers', [])
     }])
     .controller('requestrideCtrl', ['$scope', '$http', '$location', 'commonService', function ($scope, $http, $location, commonService) {
 
-        $scope.reminderBoxShow = commonService.reminderBoxShow;
+        $scope.reminderBoxShow = commonService.getReminderBoxShowStatus();
 
 
         $scope.init = function () {
@@ -27,7 +27,7 @@ angular.module('climeride.controllers', [])
         };
 
 
-        $scope.init();
+        window.setTimeout($scope.init,50);
 
         $scope.goToPage = function (pageName) {
             $location.path(pageName);
@@ -41,7 +41,8 @@ angular.module('climeride.controllers', [])
 
         $scope.reminderBoxHide = function () {
             $scope.reminderBoxShow = false;
-            commonService.reminderBoxShow = false;
+            commonService.setReminderBoxShowStatus(false);
+            window.setTimeout($scope.init, 50);
         }
 
 //        var onConfirm = function (buttonIndex) {
@@ -91,7 +92,9 @@ angular.module('climeride.controllers', [])
         //        $scope.greeting = "dsds";
         //
 
-        $scope.agreementAccepted = commonService.agreementAccepted;
+        $scope.agreementAccepted = commonService.getAgreementAccepted();
+
+        $scope.appConfig = commonService.appConfig;
 
         $scope.init = function () {
 
@@ -184,9 +187,9 @@ angular.module('climeride.controllers', [])
             $scope.width = window.screen.width;
             $scope.devicePixelRatio = window.devicePixelRatio;
             
-//            $scope.claimNumber = commonService.getClaimNumber();
-//            $scope.policeHolder = commonService.getHolderName();
-//            $scope.zipCode = commonService.getZipCode();
+            $scope.claimNumber = commonService.getClaimNumber();
+            $scope.policeHolder = commonService.getHolderName();
+            $scope.zipCode = commonService.getZipCode();
             
             if (typeof device == "undefined") {
                 return;
@@ -291,12 +294,13 @@ angular.module('climeride.controllers', [])
 
         $scope.carrierChange = function (value) {
             commonService.setSelectedCarrier(value);
+            commonService.resetAgreementAccepted();
         };
 
         $scope.goToPage = function (pageName) {
-//            commonService.setClaimNumber($scope.claimNumber);
-//            commonService.setHolderName($scope.policeHolder);
-//            commonService.setZipCode($scope.zipCode);
+            commonService.setClaimNumber($scope.claimNumber);
+            commonService.setHolderName($scope.policeHolder);
+            commonService.setZipCode($scope.zipCode);
 
             $location.path(pageName);
         };
