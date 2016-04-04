@@ -133,19 +133,19 @@ h1 {
 
 
 .agreement-accepted {
-    content:url("../img/blue1.png");
+    content: url("../img/blue1.png");
 }
 
 .agreement-unaccepted {
-    content:url("../img/red1.png");
+    content: url("../img/red1.png");
 }
 
-.credit-card-icon{
-    content:url("../img/card_i1.png");
+.credit-card-icon {
+    content: url("../img/card_i1.png");
 }
 
 .credit-card-img {
-    content:url("../img/card.png");
+    content: url("../img/card.png");
 }
 
 .responsive-container {
@@ -193,7 +193,7 @@ h1 {
 }
 
 input:focus:invalid {
-     color: #ffffff !important; 
+    color: #ffffff !important;
 }
 
 
@@ -459,7 +459,6 @@ input {
     }
 
         .table-info > div > span:first-of-type {
-            min-width: 50%;
             color: #00BDBD;
             display: inline-block;
         }
@@ -469,14 +468,17 @@ input {
             display: inline-block;
         }
 
+.info-section.table-info > div > span:first-of-type {
+        width: 30%;
+    }
+
 .benefit-section {
     width: 70%;
-
 }
 
-.benefit-section > div > span:nth-child(2) {
-    text-align: right;
-}
+    .benefit-section.table-info > div > span:first-of-type {
+        width: 50%;
+    }
 
 @media screen and (max-width: 500px) {
     .btn-app-status {
