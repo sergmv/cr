@@ -112,9 +112,7 @@ angular.module('climeride.controllers', [])
     .controller('setupCtrl', ['$scope', '$http', '$location', '$route', 'commonService', function ($scope, $http, $location, $route, commonService) {
 
         $scope.carriers = commonService.carriers;
-
-        $scope.storeLinks = commonService.storeLinks;
-
+        
         $scope.datar = {};
 
         $scope.uberIsInstalled = true;
