@@ -130,7 +130,8 @@ angular.module('climeride.controllers', [])
         $scope.androidLyft = 'me.lyft.android';
 
         $scope.appStoreUberId = '368677368';
-        $scope.appStoreLyftId = '529379082';
+        $scope.appStoreLyftId = '574846721';
+
 
         $scope.messages = {};
 
